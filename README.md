@@ -98,13 +98,21 @@ To evaluate a trained checkpoint:
 python eval.py --checkpoint_path LOGS/resnet50_DualBranch/best_model.ckpt
 ```
 
-### Comparative Results (Recall@1)
+### 🏆 Comprehensive Results (ConPR & ConSLAM)
 
-| Method | ConPR (Construction) | ConSLAM (Handheld) |
-| :--- | :---: | :---: | :---: |
-| MixVPR (Baseline) | 78.55% | 56.90% |
-| MixVPR + Rot. Aug. | 77.24% | 57.33% |
-| **DR-VPR (Ours)** | **80.15%** | **60.40%** |
+Comparison of Recall@1 scores across dynamic construction sequences (ConPR) and handheld scanning (ConSLAM). 
+**MixVPR + Rot. Aug.** denotes the baseline retrained with rotation augmentation ($p=0.5, \theta \in [0, 360^\circ)$).
+
+| Method | Dim | 0531 | 0611 | 0627 | 0628 | 0706 | 0717 | 0803 | 0809 | 0818 | **ConPR Avg** | **ConSLAM** |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| CosPlace† | 2048 | *58.85* | 71.92 | 91.96 | 90.84 | 82.96 | 64.26 | 75.87 | 75.84 | 62.61 | 74.96 | 48.26 |
+| AnyLoc-v1† | 3072 | 46.70 | 67.78 | 87.07 | 84.89 | 81.60 | 60.95 | 65.22 | 74.46 | 63.16 | 70.20 | 38.19 |
+| AnyLoc-v2† | 12288 | 51.68 | 70.14 | 89.78 | 86.74 | 86.29 | **78.34** | **82.68** | **82.37** | 69.67 | 77.52 | 48.26 |
+| MixVPR† | 4096 | 56.72 | 75.19 | 92.07 | *94.63* | *86.86* | 70.56 | *81.51* | 76.90 | *72.54* | *78.55* | 56.90 |
+| MixVPR + Rot. Aug. | 4096 | 58.69 | **76.85** | **93.80** | 93.54 | 86.26 | 68.62 | 72.85 | 75.11 | 69.44 | 77.24 | *57.33* |
+| **DR-VPR (Ours)** | 4096 | **59.85** | *76.16* | *93.04* | **94.74** | **89.10** | *71.24* | 81.15 | *81.03* | **75.09** | **80.15** | **60.40** |
+
+*† Official pretrained models.*
 
 *Inference time measured on NVIDIA RTX 6000 with batch size 1.*
 
