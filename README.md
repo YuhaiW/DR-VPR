@@ -1,6 +1,3 @@
-Here is the complete raw Markdown code for your `README.md`. You can copy and paste this directly into your file.
-
-````markdown
 # DR-VPR: Dual-Branch Rotation-Robust Visual Place Recognition
 
 <div align="center">
@@ -37,7 +34,7 @@ Our environment uses **PyTorch 2.0.1** with **CUDA 11.8**. Please follow the ste
    ```bash
    git clone [https://github.com/YuhaiW/DR-VPR.git](https://github.com/YuhaiW/DR-VPR.git)
    cd DR-VPR
-````
+
 
 2.  **Create a Conda environment**
 
@@ -103,11 +100,11 @@ python eval.py --checkpoint_path LOGS/resnet50_DualBranch/best_model.ckpt
 
 ### Comparative Results (Recall@1)
 
-| Method | ConPR (Construction) | ConSLAM (Handheld) | Inference Time |
+| Method | ConPR (Construction) | ConSLAM (Handheld) |
 | :--- | :---: | :---: | :---: |
-| MixVPR (Baseline) | 78.55% | 56.90% | 29.4 ms |
-| MixVPR + Rot. Aug. | 77.24% | 57.33% | 29.4 ms |
-| **DR-VPR (Ours)** | **80.15%** | **60.40%** | **4.23 ms** |
+| MixVPR (Baseline) | 78.55% | 56.90% |
+| MixVPR + Rot. Aug. | 77.24% | 57.33% |
+| **DR-VPR (Ours)** | **80.15%** | **60.40%** |
 
 *Inference time measured on NVIDIA RTX 6000 with batch size 1.*
 
