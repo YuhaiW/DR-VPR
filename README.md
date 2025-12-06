@@ -115,6 +115,13 @@ Comparison of Recall@1 scores across dynamic construction sequences (ConPR) and 
 *† Official pretrained models.*
 
 *Inference time measured on NVIDIA RTX 6000 with batch size 1.*
+## Qualitative Analysis
+
+Visual comparison demonstrating robustness against extreme rotation and structural changes.
+![Qualitative](assets/qualitative.png)
+
+
+Figure: Query image (Left), Top-1 Match by DR-VPR (Middle), Top-1 Match by Baseline (Right).
 
 ## 🎓 Citation
 
