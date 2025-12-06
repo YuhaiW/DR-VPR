@@ -72,8 +72,8 @@ datasets/
 ### 2\. Evaluation Datasets
 
   - **Pittsburgh 30k:** Automatically handled by the dataloader.
-  - **ConPR:** Download from [ConPR Official](https://www.google.com/search?q=https://github.com/sh8/ConPR).
-  - **ConSLAM:** Download from [ConSLAM Project](https://www.google.com/search?q=https://github.com/lab-con/ConSLAM).
+  - **ConPR:** Download from [ConPR Official](https://github.com/dongjae0107/ConPR.git).
+  - **ConSLAM:** Download from [ConSLAM Project](https://github.com/mac137/ConSLAM.git).
 
 ## 🚀 Training
 
@@ -95,7 +95,7 @@ python train_fusion.py \
 To evaluate a trained checkpoint:
 
 ```bash
-python eval.py --checkpoint_path LOGS/resnet50_DualBranch/best_model.ckpt
+python test_conpr.py --checkpoint_path LOGS/resnet50_DualBranch/best_model.ckpt
 ```
 
 ### 🏆 Comprehensive Results (ConPR & ConSLAM)
@@ -132,6 +132,3 @@ If you use this code in your research, please cite our paper:
 ## 📄 License
 
 This project is licensed under the MIT License.
-
-```
-```
