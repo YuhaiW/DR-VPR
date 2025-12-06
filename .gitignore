@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Data and Logs (Too large for GitHub)
+datasets/
+LOGS/
+*.ckpt
+*.pth
+
+# IDE
+.vscode/
+.idea/
