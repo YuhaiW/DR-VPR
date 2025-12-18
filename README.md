@@ -75,6 +75,10 @@ datasets/
   - **ConPR:** Download from [Ready to Run](https://drive.google.com/file/d/1IwfYyKhdu8hsoLxXQ7TrZabkawMt-Qge/view?usp=sharing)[ConPR Official](https://github.com/dongjae0107/ConPR.git).
   - **ConSLAM:** Download from [Ready to Run](https://drive.google.com/file/d/1uudYN0WuWhkMYqg-6-LFDL6ueFNCoI3D/view?usp=sharing)[ConSLAM Project](https://github.com/mac137/ConSLAM.git).
 
+| Project | Ready-to-Run Version | Original Source |
+| :--- | :--- | :--- |
+| **ConPR** | [Download here](https://drive.google.com/file/d/1IwfYyKhdu8hsoLxXQ7TrZabkawMt-Qge/view?usp=sharing) | [Official Repository](https://github.com/dongjae0107/ConPR.git) |
+| **ConSLAM** | [Download here](https://drive.google.com/file/d/1uudYN0WuWhkMYqg-6-LFDL6ueFNCoI3D/view?usp=sharing) | [Official Repository](https://github.com/mac137/ConSLAM.git) |
 ## 🚀 Training
 
 To train the dual-branch model. Note that we **do not** use rotation augmentation for DR-VPR, relying instead on the equivariant backbone.
