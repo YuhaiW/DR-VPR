@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-Automation%20in%20Construction-blue)](https://arxiv.org/abs/...) 
+[![Paper](https://img.shields.io/badge/Paper-Automation%20in%20Construction-blue)](https://github.com/YuhaiW/DR-VPR) 
 [![Framework](https://img.shields.io/badge/PyTorch-2.0.1-red)](https://pytorch.org/) 
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
@@ -32,7 +32,7 @@ Our environment uses **PyTorch 2.0.1** with **CUDA 11.8**. Please follow the ste
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/YuhaiW/DR-VPR.git](https://github.com/YuhaiW/DR-VPR.git)
+   git clone https://github.com/YuhaiW/DR-VPR.git
    cd DR-VPR
 
 
@@ -72,8 +72,8 @@ datasets/
 ### 2\. Evaluation Datasets
 
   - **Pittsburgh 30k:** Automatically handled by the dataloader.
-  - **ConPR:** Download from [ConPR Official](https://github.com/dongjae0107/ConPR.git).
-  - **ConSLAM:** Download from [ConSLAM Project](https://github.com/mac137/ConSLAM.git).
+  - **ConPR:** Download from [Ready to Run](https://drive.google.com/file/d/1IwfYyKhdu8hsoLxXQ7TrZabkawMt-Qge/view?usp=sharing)[ConPR Official](https://github.com/dongjae0107/ConPR.git).
+  - **ConSLAM:** Download from [Ready to Run](https://drive.google.com/file/d/1uudYN0WuWhkMYqg-6-LFDL6ueFNCoI3D/view?usp=sharing)[ConSLAM Project](https://github.com/mac137/ConSLAM.git).
 
 ## 🚀 Training
 
@@ -128,12 +128,7 @@ Figure: Query image (Left), Top-1 Match by DR-VPR (Middle), Top-1 Match by Basel
 If you use this code in your research, please cite our paper:
 
 ```bibtex
-@article{wang2025drvpr,
-  title={DR-VPR: Dual-Branch Rotation-Robust Visual Place Recognition for Dynamic Construction Environments},
-  author={Wang, Yuhai and Hu, Xiao and Ye, Yang},
-  journal={Automation in Construction (Submitted)},
-  year={2025}
-}
+Coming Soon
 ```
 
 ## 📄 License
