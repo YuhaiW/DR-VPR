@@ -126,7 +126,11 @@ Figure: Query image (Left), Top-1 Match by DR-VPR (Middle), Top-1 Match by Basel
 If you use this code in your research, please cite our paper:
 
 ```bibtex
-Coming Soon
+@article{wang5962659dr,
+  title={DR-VPR: Dual-Branch Rotation-Robust Visual Place Recognition for DynamicConstruction Environments},
+  author={Wang, Yuhai and Hu, Xiao and Shi, Yangming and Ye, Yang},
+  journal={Available at SSRN 5962659}
+}
 ```
 
 ## 📄 License
