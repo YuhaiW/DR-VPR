@@ -28,33 +28,59 @@ This repository contains the official implementation of **DR-VPR**, a dual-branc
 
 ## 🛠️ Installation
 
-Our environment uses **PyTorch 2.0.1** with **CUDA 11.8**. Please follow the steps below to ensure compatibility.
+We provide two installation paths depending on your GPU architecture. Please follow the one that matches your hardware.
 
 1. **Clone the repository**
    ```bash
    git clone https://github.com/YuhaiW/DR-VPR.git
    cd DR-VPR
+   ```
 
+2. **Create a Conda environment**
 
-2.  **Create a Conda environment**
+   ```bash
+   conda create -n drvpr python=3.9
+   conda activate drvpr
+   ```
 
-    ```bash
-    conda create -n drvpr python=3.9
-    conda activate drvpr
-    ```
+3. **Install PyTorch** *(must be installed before other requirements)*
 
-3.  **Install PyTorch (CUDA 11.8)**
-    *It is critical to install this before the other requirements.*
+   <details>
+   <summary><b>Option A: Ampere / Ada Lovelace GPUs (RTX 30xx, 40xx, A100, etc.) — CUDA 11.8</b></summary>
 
-    ```bash
-    pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2+cu118 --extra-index-url [https://download.pytorch.org/whl/cu118](https://download.pytorch.org/whl/cu118)
-    ```
+   ```bash
+   pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2+cu118 \
+       --extra-index-url https://download.pytorch.org/whl/cu118
+   ```
+   </details>
 
-4.  **Install Dependencies**
+   <details open>
+   <summary><b>Option B: Blackwell GPUs (RTX 5090, B100, B200, etc.) — CUDA 12.8</b></summary>
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+   Blackwell GPUs (sm_120) require PyTorch ≥ 2.8 with CUDA 12.8.
+   ```bash
+   pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 \
+       --index-url https://download.pytorch.org/whl/cu128
+   ```
+
+   > **Note:** After installing, downgrade NumPy to 1.x for compatibility with `faiss-gpu`:
+   > ```bash
+   > pip install "numpy<2"
+   > ```
+   </details>
+
+4. **Install Dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Verified Environments
+
+| GPU | PyTorch | CUDA | Python | Status |
+|:----|:--------|:-----|:-------|:-------|
+| NVIDIA RTX 6000 (Ada) | 2.0.1+cu118 | 11.8 | 3.9 | ✅ Tested |
+| NVIDIA RTX 5090 (Blackwell) | 2.8.0+cu128 | 12.8 | 3.9 | ✅ Tested |
 
 ## 📂 Data Preparation
 
