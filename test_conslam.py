@@ -43,7 +43,10 @@ def extract_features_conslam(model, dataloader, device='cuda'):
 
 def main():
     # ==================== Configuration ====================
-    CHECKPOINT_PATH = '/home/user1/yuhai/project/MixVPR/LOGS/resnet50_DualBranch/lightning_logs/version_10/checkpoints/resnet50_DualBranch_C16_epoch(16)_R1[0.9313].ckpt'
+    CHECKPOINT_PATH = os.environ.get(
+        'DRVPR_CKPT',
+        './LOGS/resnet50_DualBranch_seed190223/lightning_logs/version_2/checkpoints/resnet50_DualBranch_C8_seed190223_epoch(08)_R1[0.6209].ckpt'
+    )
     DATASET_PATH = './datasets/ConSLAM/'
     
     SEQUENCES = ['Sequence5', 'Sequence4']
@@ -84,22 +87,20 @@ def main():
             pretrained=False,  # 
             layers_to_freeze=2,
             layers_to_crop=[4],
-            agg_arch='MixVPR',
+            agg_arch='boq',
             agg_config={
                 'in_channels': 1024,
-                'in_h': 20,
-                'in_w': 20,
-                'out_channels': 1024,
-                'mix_depth': 4,
-                'mlp_ratio': 1,
-                'out_rows': 4
+                'proj_channels': 512,
+                'num_queries': 64,
+                'num_layers': 2,
+                'row_dim': 32,
             },
             use_dual_branch=True,
             equi_orientation=equi_orientation,
             equi_layers=[2, 2, 2, 2],
             equi_channels=equi_channels,
-            equi_out_dim=512,
-            fusion_method='attention',
+            equi_out_dim=1024,
+            fusion_method='concat',
             use_projection=False,
             strict=False  # 
         )
@@ -115,21 +116,19 @@ def main():
             pretrained=False,
             layers_to_freeze=2,
             layers_to_crop=[4],
-            agg_arch='MixVPR',
+            agg_arch='boq',
             agg_config={
                 'in_channels': 1024,
-                'in_h': 20,
-                'in_w': 20,
-                'out_channels': 1024,
-                'mix_depth': 4,
-                'mlp_ratio': 1,
-                'out_rows': 4
+                'proj_channels': 512,
+                'num_queries': 64,
+                'num_layers': 2,
+                'row_dim': 32,
             },
             use_dual_branch=True,
             equi_orientation=equi_orientation,
             equi_layers=[2, 2, 2, 2],
             equi_channels=equi_channels,
-            equi_out_dim=512,
+            equi_out_dim=1024,
             fusion_method='concat',
             use_projection=False,
         )

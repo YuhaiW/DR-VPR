@@ -8,6 +8,8 @@ import cv2
 import torch.utils.data as data
 from torchvision import transforms
 import faiss
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -269,10 +271,10 @@ def evaluateResults(global_descs, datasets, theta_degrees=0.0, offset=[0.0, 0.0]
         query_poses[:, 3], query_poses[:, 7] = query_x_rot, query_y_rot
         
         # Predictions
-        _, predictions = faiss_index.search(global_descs[i], 1)
-        
+        _, predictions = faiss_index.search(global_descs[i], 10)
+
         # Metrics
-        all_positives = tp = fp = position_only_tp = yaw_filtered_count = 0
+        all_positives = tp_1 = tp_5 = tp_10 = fp = position_only_tp = yaw_filtered_count = 0
         success_points, failure_points = [], []
         
         for q_idx, pred in enumerate(predictions):
@@ -299,19 +301,25 @@ def evaluateResults(global_descs, datasets, theta_degrees=0.0, offset=[0.0, 0.0]
                     positives.append(pos_idx)
             
             positives = np.array(positives)
-            success = pred[0] in positives
-            
-            if position_only_success and not success:
+            success_1 = pred[0] in positives
+            success_5 = np.any(np.isin(pred[:5], positives)) if len(positives) > 0 else False
+            success_10 = np.any(np.isin(pred[:10], positives)) if len(positives) > 0 else False
+
+            if position_only_success and not success_1:
                 yaw_filtered_count += 1
-            
+
             if len(positives) > 0:
                 all_positives += 1
-                if success:
-                    tp += 1
+                if success_1:
+                    tp_1 += 1
                     success_points.append((query_x_rot[q_idx], query_y_rot[q_idx]))
                 else:
                     fp += 1
                     failure_points.append((query_x_rot[q_idx], query_y_rot[q_idx]))
+                if success_5:
+                    tp_5 += 1
+                if success_10:
+                    tp_10 += 1
             
             # Diagnostic data
             pred_yaw_diff = abs(query_yaw - get_yaw_from_pose(db_poses[pred[0]]))
@@ -321,33 +329,38 @@ def evaluateResults(global_descs, datasets, theta_degrees=0.0, offset=[0.0, 0.0]
             diag_data.append({
                 'seq_i': i, 'q_idx': q_idx, 'pred_idx': pred[0],
                 'min_dist_to_pred': min_dist, 'yaw_diff_to_pred': pred_yaw_diff,
-                'success': int(success), 'success_position_only': int(position_only_success),
-                'filtered_by_yaw': int(position_only_success and not success),
+                'success': int(success_1), 'success_5': int(success_5), 'success_10': int(success_10),
+                'success_position_only': int(position_only_success),
+                'filtered_by_yaw': int(position_only_success and not success_1),
                 'num_positives': len(positives), 'num_position_positives': len(position_positives),
                 'query_x': query_poses[q_idx, 3], 'query_y': query_poses[q_idx, 7],
                 'query_yaw': query_yaw
             })
         
         # Calculate metrics
-        recall = tp / all_positives if all_positives > 0 else 0.0
+        recall_1 = tp_1 / all_positives if all_positives > 0 else 0.0
+        recall_5 = tp_5 / all_positives if all_positives > 0 else 0.0
+        recall_10 = tp_10 / all_positives if all_positives > 0 else 0.0
         recall_pos_only = position_only_tp / len(predictions) if len(predictions) > 0 else 0.0
-        prec = tp / (tp + fp) if (tp + fp) > 0 else 0.0
-        f1 = 2 * prec * recall / (prec + recall) if (prec + recall) > 0 else 0.0
-        
-        recalls.append(recall)
+        prec = tp_1 / (tp_1 + fp) if (tp_1 + fp) > 0 else 0.0
+        f1 = 2 * prec * recall_1 / (prec + recall_1) if (prec + recall_1) > 0 else 0.0
+
+        recalls.append({'R1': recall_1, 'R5': recall_5, 'R10': recall_10})
         precisions.append(prec)
         f1_scores.append(f1)
-        
+
         # Print results
         print(f"\n=== {datasets[i].seq_name} Results ===")
-        print(f"Recall@1 (yaw): {recall:.4f} ({tp}/{all_positives})")
+        print(f"Recall@1 (yaw): {recall_1:.4f} ({tp_1}/{all_positives})")
+        print(f"Recall@5 (yaw): {recall_5:.4f} ({tp_5}/{all_positives})")
+        print(f"Recall@10 (yaw): {recall_10:.4f} ({tp_10}/{all_positives})")
         print(f"Recall@1 (pos): {recall_pos_only:.4f} ({position_only_tp}/{len(predictions)})")
         print(f"Precision: {prec:.4f} | F1: {f1:.4f}")
         print(f"Yaw filtered: {yaw_filtered_count} ({yaw_filtered_count/len(predictions)*100:.1f}%)")
-        
+
         # Plot
         plot_trajectory(datasets, i, db_x, db_y, query_x_rot, query_y_rot,
-                       success_points, failure_points, recall, prec, f1,
+                       success_points, failure_points, recall_1, prec, f1,
                        yaw_threshold, plot_dir)
     
     # Save diagnostics
@@ -363,8 +376,13 @@ def evaluateResults(global_descs, datasets, theta_degrees=0.0, offset=[0.0, 0.0]
     failed_images_dict = get_failed_image_names(diag_data, datasets)
     
     # Summary statistics
+    avg_r1 = np.mean([r['R1'] for r in recalls])
+    avg_r5 = np.mean([r['R5'] for r in recalls])
+    avg_r10 = np.mean([r['R10'] for r in recalls])
     print(f"\n=== Overall Performance ===")
-    print(f"Average Recall@1: {np.mean(recalls):.4f}")
+    print(f"Average Recall@1: {avg_r1:.4f}")
+    print(f"Average Recall@5: {avg_r5:.4f}")
+    print(f"Average Recall@10: {avg_r10:.4f}")
     print(f"Average Precision: {np.mean(precisions):.4f}")
     print(f"Average F1 Score: {np.mean(f1_scores):.4f}")
     

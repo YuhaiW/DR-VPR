@@ -10,6 +10,8 @@ from torchvision import transforms
 import h5py
 
 import faiss
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -147,7 +149,7 @@ class InferDataset(data.Dataset):
         return len(self.imgs_path)
 
 
-def evaluateResults(global_descs, datasets, theta_degrees=0.0, offset=[0.0, 0.0], yaw_threshold=60.0):
+def evaluateResults(global_descs, datasets, theta_degrees=0.0, offset=[0.0, 0.0], yaw_threshold=60.0, method_name=None):
     """
     使用偏航角约束和F1分数评估ConPR数据集
     
@@ -194,10 +196,12 @@ def evaluateResults(global_descs, datasets, theta_degrees=0.0, offset=[0.0, 0.0]
         query_poses[:, 3] = query_x_rot
         query_poses[:, 7] = query_y_rot
         
-        _, predictions = faiss_index.search(global_descs[i], 1)
-        
+        _, predictions = faiss_index.search(global_descs[i], 10)
+
         all_positives = 0  # 至少有一个正样本的查询数量
-        tp = 0  # 真阳性
+        tp_1 = 0  # 真阳性 R@1
+        tp_5 = 0  # 真阳性 R@5
+        tp_10 = 0  # 真阳性 R@10
         fp = 0  # 假阳性
         
         # Statistics for tracking yaw constraint impact
@@ -228,36 +232,48 @@ def evaluateResults(global_descs, datasets, theta_degrees=0.0, offset=[0.0, 0.0]
             # 根据偏航角约束过滤正样本
             positives = []
             filtered_by_yaw = []  # Track which ones were filtered out
+            valid_positive_yaw_diffs = []  # per-positive yaw diffs (for bucketing)
             for pos_idx in position_positives:
                 db_yaw = get_yaw_from_pose(db_poses[pos_idx])
                 yaw_diff = abs(query_yaw - db_yaw)
                 # 处理角度环绕（例如 359° vs 1°）
                 if yaw_diff > 180:
                     yaw_diff = 360 - yaw_diff
-                
+
                 if yaw_diff <= yaw_threshold:
                     positives.append(pos_idx)
+                    valid_positive_yaw_diffs.append(yaw_diff)
                 else:
                     filtered_by_yaw.append(pos_idx)
-            
+
             positives = np.array(positives)
+            # Per-query difficulty label: min yaw diff to any valid positive
+            # (i.e. the "easiest" positive match). Used to bucket queries.
+            yaw_diff_min_to_pos = (np.min(valid_positive_yaw_diffs)
+                                   if valid_positive_yaw_diffs else np.nan)
             
-            # 检查预测是否正确（带偏航角约束）
-            success = 1 if pred[0] in positives else 0
-            
+            # 检查预测是否正确（带偏航角约束）R@1, R@5, R@10
+            success_1 = 1 if np.any(np.isin(pred[:1], positives)) else 0
+            success_5 = 1 if np.any(np.isin(pred[:5], positives)) else 0
+            success_10 = 1 if np.any(np.isin(pred[:10], positives)) else 0
+
             # Check if this prediction was affected by yaw filtering
-            yaw_caused_failure = (position_only_success == 1) and (success == 0)
+            yaw_caused_failure = (position_only_success == 1) and (success_1 == 0)
             if yaw_caused_failure:
                 yaw_filtered_count += 1
-            
+
             if len(positives) > 0: #all points with valid positives
                 all_positives += 1
-                if success:
-                    tp += 1
+                if success_1:
+                    tp_1 += 1
                     success_points.append((query_x_rot[q_idx], query_y_rot[q_idx]))
                 else:
                     fp += 1
                     failure_points.append((query_x_rot[q_idx], query_y_rot[q_idx]))
+                if success_5:
+                    tp_5 += 1
+                if success_10:
+                    tp_10 += 1
             # else:
             #     # 没有有效正样本，但模型仍然做出了预测
             #     if pred[0] in position_positives:
@@ -278,31 +294,38 @@ def evaluateResults(global_descs, datasets, theta_degrees=0.0, offset=[0.0, 0.0]
                 'pred_idx': pred[0],
                 'min_dist_to_pred': min_dist,
                 'yaw_diff_to_pred': yaw_diff_pred,
-                'success': success,
+                'success': success_1,
                 'success_position_only': position_only_success,
+                'success_5': success_5,
+                'success_10': success_10,
                 'filtered_by_yaw': 1 if yaw_caused_failure else 0,
                 'num_positives': len(positives),
                 'num_position_positives': len(position_positives),
                 'num_filtered_by_yaw': len(filtered_by_yaw),
+                'yaw_diff_min_to_pos': yaw_diff_min_to_pos,
                 'query_x': query_poses[q_idx, 3],
                 'query_y': query_poses[q_idx, 7],
                 'query_yaw': query_yaw
             })
 
         # 计算指标
-        recall_top1 = tp / all_positives if all_positives > 0 else 0.0
+        recall_at_1 = tp_1 / all_positives if all_positives > 0 else 0.0
+        recall_at_5 = tp_5 / all_positives if all_positives > 0 else 0.0
+        recall_at_10 = tp_10 / all_positives if all_positives > 0 else 0.0
         recall_position_only = position_only_tp / len(predictions) if len(predictions) > 0 else 0.0
-        precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
-        f1_score = 2 * (precision * recall_top1) / (precision + recall_top1) if (precision + recall_top1) > 0 else 0.0
-        
-        recalls_conpr.append(recall_top1)
+        precision = tp_1 / (tp_1 + fp) if (tp_1 + fp) > 0 else 0.0
+        f1_score = 2 * (precision * recall_at_1) / (precision + recall_at_1) if (precision + recall_at_1) > 0 else 0.0
+
+        recalls_conpr.append({'R1': recall_at_1, 'R5': recall_at_5, 'R10': recall_at_10})
         precision_list.append(precision)
         f1_scores.append(f1_score)
-        
+
         print(f"\n=== ConPR Sequence {i} Results ===")
-        print(f"Recall@1 (with yaw constraint): {recall_top1:.4f} ({tp}/{all_positives})")
+        print(f"Recall@1 (yaw): {recall_at_1:.4f} ({tp_1}/{all_positives})")
+        print(f"Recall@5 (yaw): {recall_at_5:.4f} ({tp_5}/{all_positives})")
+        print(f"Recall@10 (yaw): {recall_at_10:.4f} ({tp_10}/{all_positives})")
         print(f"Recall@1 (position only): {recall_position_only:.4f} ({position_only_tp}/{len(predictions)})")
-        print(f"Precision: {precision:.4f} ({tp}/{tp+fp})")
+        print(f"Precision: {precision:.4f} ({tp_1}/{tp_1+fp})")
         print(f"F1 Score: {f1_score:.4f}")
         print(f"Failure points: {len(failure_points)}, Success points: {len(success_points)}")
         print(f"\n🔍 Yaw Constraint Impact:")
@@ -330,7 +353,7 @@ def evaluateResults(global_descs, datasets, theta_degrees=0.0, offset=[0.0, 0.0]
         plt.xlabel('X (m)', fontsize=12)
         plt.ylabel('Y (m)', fontsize=12)
         plt.title(f'ConPR Trajectory Comparison: Seq {i} vs Database\n'
-                 f'Recall@1: {recall_top1:.3f} | Precision: {precision:.3f} | F1: {f1_score:.3f}', 
+                 f'R@1: {recall_at_1:.3f} | R@5: {recall_at_5:.3f} | R@10: {recall_at_10:.3f}',
                  fontsize=13)
         plt.legend(loc='best', fontsize=10)
         plt.grid(True, alpha=0.3)
@@ -343,7 +366,8 @@ def evaluateResults(global_descs, datasets, theta_degrees=0.0, offset=[0.0, 0.0]
 
     # 生成诊断矩阵（DataFrame）
     diag_df = pd.DataFrame(diag_data)
-    csv_filename = f'diagnosis_matrix_conpr_yaw{yaw_threshold}.csv'
+    tag = f"_{method_name}" if method_name else ""
+    csv_filename = f'diagnosis_matrix_conpr_yaw{yaw_threshold}{tag}.csv'
     diag_df.to_csv(csv_filename, index=False)
     print(f"\n=== 诊断矩阵已保存到: {csv_filename} ===")
     print(diag_df.head(10))
@@ -374,9 +398,13 @@ def evaluateResults(global_descs, datasets, theta_degrees=0.0, offset=[0.0, 0.0]
               f"y ∈ [{low_pos_env['query_y'].min():.1f}, {low_pos_env['query_y'].max():.1f}]")
     
     # 总体统计
+    avg_r1 = np.mean([r['R1'] for r in recalls_conpr])
+    avg_r5 = np.mean([r['R5'] for r in recalls_conpr])
+    avg_r10 = np.mean([r['R10'] for r in recalls_conpr])
     print(f"\n=== ConPR 总体性能 ===")
-    print(f"平均 Recall@1: {np.mean(recalls_conpr):.4f}")
-    print(f"平均 Recall@1 (位置): {np.mean(recall_position_only):.4f}")
+    print(f"平均 Recall@1: {avg_r1:.4f}")
+    print(f"平均 Recall@5: {avg_r5:.4f}")
+    print(f"平均 Recall@10: {avg_r10:.4f}")
     print(f"平均 Precision: {np.mean(precision_list):.4f}")
     print(f"平均 F1 Score: {np.mean(f1_scores):.4f}")
     

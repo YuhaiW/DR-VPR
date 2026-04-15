@@ -156,7 +156,12 @@ def get_aggregator(agg_arch='ConvAP', agg_config={}):
     elif agg_arch.lower() == 'mixvpr':
         assert 'in_channels' in agg_config
         aggregator = MixVPR(**agg_config)
-        
+
+    elif agg_arch.lower() == 'boq':
+        from models.aggregators.boq_wrapper import BoQWrapper
+        assert 'in_channels' in agg_config
+        aggregator = BoQWrapper(**agg_config)
+
     else:
         raise ValueError(f'Aggregator {agg_arch} not implemented')
     
