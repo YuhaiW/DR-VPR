@@ -43,7 +43,10 @@ def extract_features_conslam(model, dataloader, device='cuda'):
 
 def main():
     # ==================== Configuration ====================
-    CHECKPOINT_PATH = '/home/user1/yuhai/project/MixVPR/LOGS/resnet50_DualBranch/lightning_logs/version_10/checkpoints/resnet50_DualBranch_C16_epoch(16)_R1[0.9313].ckpt'
+    CHECKPOINT_PATH = os.environ.get(
+        'DRVPR_CKPT',
+        '/home/user1/yuhai/project/MixVPR/LOGS/resnet50_DualBranch/lightning_logs/version_10/checkpoints/resnet50_DualBranch_C16_epoch(16)_R1[0.9313].ckpt'
+    )
     DATASET_PATH = './datasets/ConSLAM/'
     
     SEQUENCES = ['Sequence5', 'Sequence4']

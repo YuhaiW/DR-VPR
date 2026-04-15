@@ -43,8 +43,10 @@ def extract_features_conpr(model, dataloader, device='cuda'):
 
 def main():
     # ==================== Configuration ====================
-    CHECKPOINT_PATH = '/home/user1/yuhai/project/MixVPR/LOGS/resnet50_DualBranch/lightning_logs/best_attention_fusion/checkpoints/sota.ckpt'
-    # '/home/user1/yuhai/project/MixVPR/LOGS/resnet50_DualBranch/lightning_logs/best_attention_fusion/checkpoints/sota.ckpt'
+    CHECKPOINT_PATH = os.environ.get(
+        'DRVPR_CKPT',
+        '/home/user1/yuhai/project/MixVPR/LOGS/resnet50_DualBranch/lightning_logs/best_attention_fusion/checkpoints/sota.ckpt'
+    )
     DATASET_PATH = './datasets/ConPR/'
     
     # ConPR sequences - UPDATE THESE TO MATCH YOUR ACTUAL SEQUENCE NAMES

@@ -304,8 +304,14 @@ class VPRModel(pl.LightningModule):
 
 
 if __name__ == '__main__':
-    pl.utilities.seed.seed_everything(seed=190223, workers=True)
-    
+    import argparse as _argparse
+    _parser = _argparse.ArgumentParser()
+    _parser.add_argument('--seed', type=int, default=190223)
+    _args = _parser.parse_args()
+
+    pl.utilities.seed.seed_everything(seed=_args.seed, workers=True)
+    print(f"Seed: {_args.seed}")
+
     # Datamodule
     datamodule = GSVCitiesDataModule(
         batch_size=60,  # Reduced for dual-branch
@@ -314,12 +320,12 @@ if __name__ == '__main__':
         shuffle_all=False,
         random_sample_from_each_place=True,
         image_size=(320, 320),
-        num_workers=28,
+        num_workers=12,
         show_data_stats=True,
-        val_set_names=['pitts30k_val', 'pitts30k_test', 'conpr'],
+        val_set_names=['conpr'],
                 # Or full validation: all 10 sequences (will be slower)
         conpr_sequences=None,
-        
+
         conpr_yaw_threshold=80.0,
     )
     
@@ -392,20 +398,20 @@ if __name__ == '__main__':
     
     # Checkpoint callback
     checkpoint_cb = ModelCheckpoint(
-        monitor='pitts30k_val/R1',
-        filename=f'{model.encoder_arch}_DualBranch_C{model.equi_orientation}' +
-        '_epoch({epoch:02d})_R1[{pitts30k_val/R1:.4f}]',
+        monitor='conpr/R1',
+        filename=f'{model.encoder_arch}_DualBranch_C{model.equi_orientation}_seed{_args.seed}' +
+        '_epoch({epoch:02d})_R1[{conpr/R1:.4f}]',
         auto_insert_metric_name=False,
         save_weights_only=True,
         save_top_k=3,
         mode='max',
     )
-    
+
     # Trainer
     trainer = pl.Trainer(
-        accelerator='gpu', 
+        accelerator='gpu',
         devices=[0],
-        default_root_dir=f'./LOGS/{model.encoder_arch}_DualBranch',
+        default_root_dir=f'./LOGS/{model.encoder_arch}_DualBranch_seed{_args.seed}',
         num_sanity_val_steps=0,
         precision=16,  # Mixed precision training
         max_epochs=40,
