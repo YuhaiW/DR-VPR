@@ -56,9 +56,9 @@ def main():
     NUM_WORKERS = 4
     
     # Evaluation parameters
-    THETA_DEGREES = 15.0  # Rotation angle for query trajectory
+    THETA_DEGREES = 15.0  # Rotation angle for query trajectory (matches eval_baselines.py)
     OFFSET = [0.0, 0.0]  # Translation offset [x, y]
-    YAW_THRESHOLD = 60.0  # Maximum yaw difference for positive samples (degrees)
+    YAW_THRESHOLD = 80.0  # Maximum yaw difference for positive samples (degrees)
     
     # ==================== Setup ====================
     print("="*70)

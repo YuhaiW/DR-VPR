@@ -6,37 +6,40 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class AttentionFusion(nn.Module):
-    """Learn optimal fusion weights between two branches.
+    """Low-rank per-sample gate between two branches.
 
-    Dimension-agnostic: works for any (dim1, dim2). Softmax final layer is
-    biased at init so w1 ≈ 1.0 / w2 ≈ 0.0 — this preserves the pretrained
-    Branch-1 (BoQ) signal at training start, mirroring the zero-init gate
-    used in concat fusion. Both branches become actively used as training
-    moves the learned weights away from this prior.
+    Each branch descriptor is first compressed to a small summary; the pair
+    of summaries drives a tiny scoring head that emits two softmax weights.
+    The weights mix the original (uncompressed) descriptors, so capacity is
+    preserved while the gating parameters stay light.
+
+    Softmax bias is initialized to (+2.0, 0.0) so that at t=0 the output is
+    ≈0.881·Branch 1 + 0.119·Branch 2. This preserves the pretrained BoQ signal
+    while leaving the equivariant branch a real gradient pathway. An earlier
+    bias of (+10, 0) saturated the softmax and effectively froze w2≈1e-4,
+    causing the equi branch to never contribute (verified across 3 seeds).
     """
-    def __init__(self, dim1, dim2):
+    def __init__(self, dim1, dim2, summary_dim=64):
         super().__init__()
         self.dim1 = dim1
         self.dim2 = dim2
-        self.hidden = nn.Linear(dim1 + dim2, 512)
-        self.dropout = nn.Dropout(0.1)
-        self.final = nn.Linear(512, 2)
-        # Init: make softmax output ≈ (1.0, 0.0) regardless of input
+        self.proj1 = nn.Linear(dim1, summary_dim)
+        self.proj2 = nn.Linear(dim2, summary_dim)
+        self.score = nn.Linear(2 * summary_dim, 2)
+        # Init: softmax output ≈ (0.881, 0.119) regardless of input
         with torch.no_grad():
-            self.final.weight.zero_()
-            self.final.bias.copy_(torch.tensor([10.0, 0.0]))
+            self.score.weight.zero_()
+            self.score.bias.copy_(torch.tensor([2.0, 0.0]))
 
     def forward(self, desc1, desc2):
-        concat = torch.cat([desc1, desc2], dim=1)                  # (B, dim1+dim2)
-        h = F.relu(self.hidden(concat))
-        h = self.dropout(h)
-        weights = F.softmax(self.final(h), dim=1)                  # (B, 2)
+        s = torch.cat([self.proj1(desc1), self.proj2(desc2)], dim=1)  # (B, 2*summary_dim)
+        weights = F.softmax(self.score(s), dim=1)                      # (B, 2)
         w1, w2 = weights[:, 0:1], weights[:, 1:2]
 
-        desc1_proj = desc1 * w1                                     # (B, dim1)
-        desc2_proj = F.pad(desc2, (0, self.dim1 - self.dim2)) * w2  # pad to dim1
+        desc1_w = desc1 * w1                                            # (B, dim1)
+        desc2_w = F.pad(desc2, (0, self.dim1 - self.dim2)) * w2         # pad to dim1
 
-        fused = desc1_proj + desc2_proj
+        fused = desc1_w + desc2_w
         return F.normalize(fused, p=2, dim=1)
     
 
@@ -141,8 +144,12 @@ class DualBranchAggregator(nn.Module):
         desc1 = F.normalize(desc1, p=2, dim=1)
         desc2 = F.normalize(desc2, p=2, dim=1)
 
-        # Zero-init gate on equi branch: keeps pure BoQ behavior at t=0
-        desc2 = desc2 * self.equi_gate
+        # Zero-init gate on equi branch: keeps pure BoQ behavior at t=0.
+        # Skipped for attention fusion — the softmax-bias init in
+        # AttentionFusion already pins w2≈0 at t=0, so gating desc2 twice
+        # would be redundant and would double-throttle the equi signal.
+        if self.fusion_method != 'attention':
+            desc2 = desc2 * self.equi_gate
 
         # Fusion
         if self.fusion_method == 'concat':

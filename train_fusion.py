@@ -2,6 +2,7 @@
 Dual-Branch VPR Training Script
 Combines standard ResNet + MixVPR with E2ResNet for rotation robustness
 """
+import os
 import pytorch_lightning as pl
 import torch
 from pytorch_lightning.callbacks import ModelCheckpoint
@@ -170,11 +171,13 @@ class VPRModel(pl.LightningModule):
                 or agg_config.get('out_rows', 4) * agg_config.get('out_channels', 1024)
             
             # Branch 2: Equivariant CNN
+            _pool_mode = os.environ.get('GROUP_POOL_MODE', 'max')
             self.backbone2 = helper.get_equivariant_backbone(
                 orientation=equi_orientation,
                 layers=equi_layers,
                 channels=equi_channels,
-                pretrained=False
+                pretrained=False,
+                group_pool_mode=_pool_mode,
             )
             
             #  KEY FIX: Calculate correct output channels after GroupPooling
@@ -447,8 +450,8 @@ if __name__ == '__main__':
     print(f"    - Equivariant channels: {equi_channels}")
     print(f"    - After GroupPooling: {branch2_pooled_channels} channels")
     print(f"    - Descriptor: 1024 dim")
-    print(f"  Fusion: L2-norm per branch → concat → L2-norm")
-    print(f"  Final descriptor: 16384 + 1024 = 17408 dim")
+    print(f"  Fusion: attention (softmax-weighted, biased to pure BoQ at init)")
+    print(f"  Final descriptor (attention fusion): 16384 dim (Branch 2 padded into Branch 1)")
     print(f"{'='*60}\n")
 
     model = VPRModel(
@@ -474,7 +477,7 @@ if __name__ == '__main__':
         equi_layers=[2, 2, 2, 2],
         equi_channels=equi_channels,
         equi_out_dim=1024,                  # expanded from 512 to rebalance
-        fusion_method='attention',
+        fusion_method=os.environ.get('FUSION_METHOD', 'concat'),
         use_projection=False,
 
         #---- Train hyperparameters (AdamW + layered LR; see configure_optimizers override)
@@ -495,15 +498,34 @@ if __name__ == '__main__':
 
     # Cold-start Branch-1 (ResNet50 backbone + BoQ head) from public BoQ weights.
     load_boq_pretrained(model)
-    
+
+    # Optionally freeze ALL of Branch 1 (backbone + BoQ head) so pretrained
+    # features are preserved exactly. Only equi branch + gate train.
+    _freeze_boq = os.environ.get('FREEZE_BOQ', '0') == '1'
+    if _freeze_boq:
+        frozen_count = 0
+        for name, p in model.named_parameters():
+            if name.startswith('backbone.') and not name.startswith('backbone2.'):
+                p.requires_grad_(False)
+                frozen_count += 1
+            elif name.startswith('aggregator.branch1_aggregator'):
+                p.requires_grad_(False)
+                frozen_count += 1
+        trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
+        total = sum(p.numel() for p in model.parameters())
+        print(f"[FREEZE_BOQ] Froze {frozen_count} Branch-1 param tensors.")
+        print(f"[FREEZE_BOQ] Trainable: {trainable:,} / {total:,} total ({trainable/total*100:.1f}%)")
+
     # Checkpoint callback
+    _tag = os.environ.get('RUN_TAG', model.fusion_method)
+    run_tag = f"{model.encoder_arch}_DualBranch_{_tag}_seed{_args.seed}"
     checkpoint_cb = ModelCheckpoint(
         monitor='conpr/R1',
-        filename=f'{model.encoder_arch}_DualBranch_C{model.equi_orientation}_seed{_args.seed}' +
+        filename=f'{model.encoder_arch}_DualBranch_C{model.equi_orientation}_{model.fusion_method}_seed{_args.seed}' +
         '_epoch({epoch:02d})_R1[{conpr/R1:.4f}]',
         auto_insert_metric_name=False,
         save_weights_only=True,
-        save_top_k=3,
+        save_top_k=-1,     # save EVERY epoch — per-epoch eval protocol
         mode='max',
     )
 
@@ -511,10 +533,10 @@ if __name__ == '__main__':
     trainer = pl.Trainer(
         accelerator='gpu',
         devices=[0],
-        default_root_dir=f'./LOGS/{model.encoder_arch}_DualBranch_seed{_args.seed}',
+        default_root_dir=f'./LOGS/{run_tag}',
         num_sanity_val_steps=0,
         precision=16,  # Mixed precision training
-        max_epochs=20,
+        max_epochs=10,
         check_val_every_n_epoch=1,
         callbacks=[checkpoint_cb],
         reload_dataloaders_every_n_epochs=1,
@@ -522,10 +544,12 @@ if __name__ == '__main__':
     )
 
     # Start training
+    final_dim = model.aggregator.out_dim
     print("\n" + "="*60)
     print("Starting Equi-BoQ DR-VPR Training")
     print("  - Model: ResNet50 + BoQ || E2ResNet + GeM")
-    print("  - Descriptor: 17408 dim (16384 + 1024)")
+    print(f"  - Fusion: {model.fusion_method}")
+    print(f"  - Descriptor: {final_dim} dim")
     print("  - Dataset: GSV-Cities")
     print("  - Validation: ConPR")
     print("="*60 + "\n")

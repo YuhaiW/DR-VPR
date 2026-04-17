@@ -87,14 +87,17 @@ class E2ResNetBackbone(nn.Module):
     Rotation-Equivariant ResNet for VPR (second branch)
     Simpler than full E2ResNet, optimized for feature extraction
     """
-    def __init__(self, 
+    def __init__(self,
                  orientation=8,      # C8 rotation group
                  layers=[2, 2, 2, 2], # ResNet18-like structure
                  channels=[64, 128, 256, 512],
-                 pretrained=False):   # Note: equivariant models usually need custom pretraining
+                 pretrained=False,   # Note: equivariant models usually need custom pretraining
+                 group_pool_mode='max',  # 'max' (default, enn.GroupPooling) or 'mean' (ablation)
+                 ):
         super().__init__()
-        
+
         self.orientation = orientation
+        self.group_pool_mode = group_pool_mode
         self.gspace = gspaces.Rot2dOnR2(orientation)  # C8 or C16 group
         
         # Input: RGB image (trivial representation)
@@ -121,11 +124,20 @@ class E2ResNetBackbone(nn.Module):
         
         # Output type for group pooling
         self.final_type = regular_feature_type(self.gspace, channels[3])
-        self.group_pool = enn.GroupPooling(self.final_type)
-        
+        if group_pool_mode == 'max':
+            self.group_pool = enn.GroupPooling(self.final_type)
+        elif group_pool_mode == 'mean':
+            # Mean-over-group alternative (ablation row for R2-Q4.2 GroupPool ablation).
+            # Implemented manually: reshape raw tensor to separate field/orientation axes,
+            # mean over orientation. Still produces an invariant descriptor (mean over
+            # the group is an orbit average, which is invariant to group action).
+            self.group_pool = None   # will use self._mean_group_pool in forward
+        else:
+            raise ValueError(f"Unknown group_pool_mode: {group_pool_mode}")
+
         self.out_channels = channels[3]  # Output channels after group pooling
-        
-        print(f"✓ E2ResNet initialized: C{orientation}, layers={layers}, channels={channels}")
+
+        print(f"✓ E2ResNet initialized: C{orientation}, layers={layers}, channels={channels}, pool={group_pool_mode}")
         
     def _make_layer(self, in_channels, out_channels, blocks, stride):
         """Build a layer with multiple blocks"""
@@ -180,10 +192,21 @@ class E2ResNetBackbone(nn.Module):
         x = self.layer4(x)  # H/32, W/32
         
         # Group pooling: rotation-equivariant -> rotation-invariant
-        x = self.group_pool(x)
-        
-        # Return standard tensor
-        return x.tensor
+        if self.group_pool_mode == 'max':
+            x = self.group_pool(x)
+            return x.tensor
+        else:
+            # Mean-over-group alternative. e2cnn's regular FieldType with F fields of
+            # regular rep (order G) lays out channels as [f0_g0, f0_g1, ..., f0_g{G-1},
+            # f1_g0, ...]. So the correct reshape for orbit averaging is
+            # (B, F, G, H, W) then mean over G.
+            raw = x.tensor
+            B, C, H, W = raw.shape
+            G = self.orientation
+            assert C % G == 0, f"channels {C} not divisible by group order {G}"
+            F_ = C // G
+            raw = raw.view(B, F_, G, H, W)
+            return raw.mean(dim=2)  # (B, F_, H, W), invariant to C_G rotation
 
 
 # Quick test

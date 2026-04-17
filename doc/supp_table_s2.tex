@@ -1,0 +1,25 @@
+% Supplementary Table S2 — per-epoch max-pool vs mean-pool GroupPooling ablation (seed 190223).
+\begin{table}[h]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Per-epoch GroupPooling ablation on seed 190223 (main-method seed): max-pool (the configuration used by the main architecture) vs.\ mean-pool (orbit averaging). All R@1 values are percentages; Val R@1 is measured on our GSV-Cities validation split. $\bigstar$ marks the per-configuration val-best epoch used for reporting.}
+\label{tab:supp_s2_grouppool}
+\begin{tabular}{c|rr|rrr|rrr}
+\toprule
+Epoch & \multicolumn{2}{c|}{Val R@1 (\%)} & \multicolumn{3}{c|}{ConPR R@1 (\%)} & \multicolumn{3}{c}{ConSLAM R@1 (\%)} \\
+ & max & mean & max & mean & $\Delta$ & max & mean & $\Delta$ \\
+\midrule
+00\,$\bigstar\bigstar$ & 65.06 & 65.28 & 80.92 & 80.60 & -0.32 & 61.11 & 59.38 & -1.73 \\
+01 & 63.64 & 64.14 & 78.69 & 78.59 & -0.10 & 60.42 & 60.42 & +0.00 \\
+02 & 63.95 & 64.05 & 79.65 & 79.47 & -0.18 & 57.29 & 55.90 & -1.39 \\
+03 & 62.09 & 63.26 & 78.92 & 78.56 & -0.36 & 57.64 & 58.68 & +1.04 \\
+04 & 62.15 & 62.66 & 79.42 & 78.81 & -0.61 & 58.68 & 57.99 & -0.69 \\
+05 & 62.69 & 62.47 & 78.58 & 78.18 & -0.40 & 58.33 & 58.68 & +0.35 \\
+06 & 63.60 & 62.44 & 78.99 & 78.75 & -0.24 & 56.60 & 57.99 & +1.39 \\
+07 & 63.57 & 62.31 & 79.04 & 78.96 & -0.08 & 58.68 & 60.42 & +1.74 \\
+08 & 63.67 & 62.15 & 78.77 & 78.80 & +0.03 & 57.64 & 59.72 & +2.08 \\
+09 & 63.60 & 62.34 & 78.55 & 78.72 & +0.17 & 59.72 & 60.42 & +0.70 \\
+\bottomrule
+\end{tabular}
+\end{table}
