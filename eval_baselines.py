@@ -142,6 +142,17 @@ def load_boq(device, backbone='dinov2'):
         img_size = (384, 384)
         desc_dim = 16384
 
+    # Env var override for protocol-matching experiments (e.g. BOQ_IMG_SIZE=320
+    # to compare at same resolution as DR-VPR eval_rerank.py).
+    _override = os.environ.get('BOQ_IMG_SIZE')
+    if _override is not None:
+        try:
+            s = int(_override)
+            img_size = (s, s)
+            print(f"  [override] BOQ_IMG_SIZE={s} → using input {img_size}")
+        except ValueError:
+            print(f"  [warn] BOQ_IMG_SIZE={_override!r} ignored (not int)")
+
     model = model.eval().to(device)
     print(f"  BoQ loaded: descriptor dim={desc_dim}, input={img_size}")
     return model, img_size, desc_dim
@@ -325,9 +336,12 @@ def eval_conpr(model, img_size, method_name, device, batch_size=16, num_workers=
         global_descs.append(feats)
 
     # Evaluate - now returns list of dicts with R1/R5/R10
+    # θ=0° for ConPR (bird's-eye aerial views, no systematic query trajectory rotation).
+    # Matches test_conpr.py default. Commit db01de5 (2026-04-16) accidentally flipped
+    # this to 15° which crushes all baselines to ~3% R@1; fixed 2026-04-17.
     recalls = conpr_evaluate(
         global_descs, datasets,
-        theta_degrees=15.0, offset=[0.0, 0.0],
+        theta_degrees=0.0, offset=[0.0, 0.0],
         yaw_threshold=YAW_THRESHOLD,
         method_name=method_name,
     )
@@ -399,7 +413,7 @@ def eval_conslam(model, img_size, method_name, device, batch_size=16, num_worker
 # Main
 # ============================================================
 
-ALL_METHODS = ['salad', 'cricavpr', 'boq', 'cosplace', 'mixvpr', 'dinov2']
+ALL_METHODS = ['salad', 'cricavpr', 'boq', 'boq_resnet50', 'cosplace', 'mixvpr', 'dinov2']
 
 def main():
     parser = argparse.ArgumentParser(description='Evaluate baseline VPR methods')
@@ -435,6 +449,8 @@ def main():
             model, img_size, desc_dim = load_cricavpr(device)
         elif method == 'boq':
             model, img_size, desc_dim = load_boq(device, backbone='dinov2')
+        elif method == 'boq_resnet50':
+            model, img_size, desc_dim = load_boq(device, backbone='resnet50')
         elif method == 'cosplace':
             model, img_size, desc_dim = load_cosplace(device)
         elif method == 'mixvpr':

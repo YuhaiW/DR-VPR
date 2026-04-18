@@ -1,0 +1,28 @@
+Dual-Branch VPR Model on ConPR Dataset - Results
+======================================================================
+
+Model: Dual-Branch Architecture
+  Branch 1: ResNet50 + MixVPR (4096 dim)
+  Branch 2: E2ResNet (C8) + GeM (512 dim)
+  Fusion: Concatenation (4608 dim)
+
+Checkpoint: /home/yuhai/project/DR-VPR/LOGS/resnet50_DualBranch_seed1/lightning_logs/version_0/checkpoints/resnet50_DualBranch_C8_seed1_epoch(06)_R1[0.6070].ckpt
+Rotation: 0.0°
+Offset: [0.0, 0.0]
+Yaw Threshold: 80.0°
+
+Results:
+----------------------------------------------------------------------
+Database: Sequence 20230623
+
+Query 1 (Seq 20230531): Recall@1 = 0.5979 (59.79%)
+Query 2 (Seq 20230611): Recall@1 = 0.7519 (75.19%)
+Query 3 (Seq 20230627): Recall@1 = 0.9429 (94.29%)
+Query 4 (Seq 20230628): Recall@1 = 0.9241 (92.41%)
+Query 5 (Seq 20230706): Recall@1 = 0.8849 (88.49%)
+Query 6 (Seq 20230717): Recall@1 = 0.7782 (77.82%)
+Query 7 (Seq 20230803): Recall@1 = 0.8110 (81.10%)
+Query 8 (Seq 20230809): Recall@1 = 0.7823 (78.23%)
+Query 9 (Seq 20230818): Recall@1 = 0.7322 (73.22%)
+
+Average Recall@1: 0.8006 (80.06%)

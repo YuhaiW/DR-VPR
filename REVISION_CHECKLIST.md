@@ -36,6 +36,43 @@ The section-by-section edits below are the authoritative changes to apply to `Su
 
 ---
 
+## ARCHITECTURE UPDATE — 2026-04-17 (in progress)
+
+Parallel track of two improvements being tested to push ConSLAM results higher:
+
+1. **Tier-2 Fourier invariant mapping**: replace `GroupPool(max)` with discrete
+   Fourier magnitudes over the orientation orbit. Preserves 5 invariants per field
+   instead of 1, grows equi-branch capacity from 64 → 320 invariant channels.
+   Mathematical basis: Cohen-Welling 2017 / Weiler-Cesa 2019 irrep decomposition.
+2. **Three-loss training**: add `L_equi = MS(desc_equi)` and
+   `L_rot = 1 - cos(desc_equi, desc_equi(R_θ))` on top of `L_main`. Gives `desc_equi`
+   its own discriminative + invariance supervision signals (the rerank eval uses
+   `desc_equi` independently, so training it independently was the missing piece).
+3. **Freeze BoQ completely** (`FREEZE_BOQ=1`). Decision-gate experiment on 2026-04-17
+   (seed=1 unfreeze, 5 epoch + β sweep) showed BoQ fine-tune — even at 0.05× LR —
+   degrades ConSLAM single-stage R@1 from **62.21%** (pretrained BoQ standalone)
+   down to **53-58%** across epochs. Rerank +3.9 from the equi branch cannot offset
+   the −6 stage-1 loss. Conclusion: BoQ must be treated as frozen evaluator; this is
+   consistent with the R2Former/DELG/SelaVPR design philosophy.
+
+Status:
+- seed=1 Tier-2 + freeze_boq: training in progress (launched 2026-04-17 ~14:55)
+- β sweep eval on ConSLAM: pending training completion
+- β sweep eval on ConPR: requires adapting `eval_rerank.py` (hardcoded to Sequence4/5)
+  or running `test_conpr.py` single-stage for comparison
+- Decision on whether to extend to seed=42/190223: pending single-seed data
+
+**Technical documentation**:
+- Design and math: `doc/TIER2_FOURIER_INVARIANT_TUTORIAL.md` (v2, with §5.7 BoQ
+  freeze rationale and seed=1 decision-gate findings)
+- Experiment log: `doc/TIER2_EXPERIMENT_LOG_20260417.md`
+
+If successful (R@1 > 62.21 + 2%) this will supersede the 2026-04-16 Equi-BoQ concat
+result in Table 1. The 2026-04-16 numbers (79.68 ConPR / 58.63 ConSLAM) remain the
+**fallback** if Tier-2+freeze fails to converge in time.
+
+---
+
 ## Meta strategy (post-2026-04-16)
 
 `MAIN METHOD = Equi-BoQ + gated concatenation` (was: MixVPR + attention).

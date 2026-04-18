@@ -165,8 +165,31 @@ def main():
     model = build_model()
     load_boq_pretrained(model)
     state = torch.load(ckpt, map_location='cpu')['state_dict']
-    model.load_state_dict(state, strict=False)
+    # Explicit missing/unexpected key report: previously used strict=False which
+    # silently dropped shape-mismatched weights (e.g. when ckpt was trained with a
+    # different GROUP_POOL_MODE than build_model() creates — tier2 ckpt has
+    # branch2_aggregator Linear weight shape (1024, 320) while a max-mode model
+    # creates (1024, 64), causing silent weight skip and nonsensical results).
+    missing, unexpected = model.load_state_dict(state, strict=False)
+    # e2cnn's R2Conv registers a lazily-computed `.filter` buffer that is NOT saved in
+    # state_dict (the trained weights are in `.weights`; `.filter` is recomputed from
+    # them on first forward). So these are always benign "missing" — whitelist them.
+    real_missing = [k for k in missing if not k.endswith('.filter')]
+    print(f"load_state_dict: {len(missing)} missing ({len(real_missing)} real, "
+          f"{len(missing) - len(real_missing)} benign .filter buffers), "
+          f"{len(unexpected)} unexpected")
+    if real_missing:
+        print(f"  REAL MISSING (sample): {real_missing[:5]}")
+    if unexpected:
+        print(f"  UNEXPECTED (sample): {list(unexpected)[:5]}")
+    # Treat real mismatch as fatal (likely GROUP_POOL_MODE vs ckpt disagreement).
+    # Set DRVPR_EVAL_ALLOW_MISMATCH=1 to bypass for debug.
+    if (real_missing or unexpected) and os.environ.get('DRVPR_EVAL_ALLOW_MISMATCH', '0') != '1':
+        sys.exit("Aborting: state_dict mismatch. Check GROUP_POOL_MODE matches the ckpt's "
+                 "training config. Set DRVPR_EVAL_ALLOW_MISMATCH=1 to proceed anyway.")
     model = model.to(DEVICE).eval()
+    print(f"Model built with GROUP_POOL_MODE={os.environ.get('GROUP_POOL_MODE', 'max')}, "
+          f"branch2 invariant channels={model.backbone2.out_channels}")
 
     trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
     total_p = sum(p.numel() for p in model.parameters())

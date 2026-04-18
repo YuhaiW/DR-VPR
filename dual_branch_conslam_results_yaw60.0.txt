@@ -1,0 +1,26 @@
+Dual-Branch VPR Model on ConSLAM Dataset - Results
+======================================================================
+
+Model: Dual-Branch Architecture
+  Branch 1: ResNet50 + MixVPR (4096 dim)
+  Branch 2: E2ResNet (C8) + GeM (512 dim)
+  Fusion: Attention (4608 dim)
+
+Checkpoint: /home/yuhai/project/DR-VPR/LOGS/resnet50_DualBranch_seed1/lightning_logs/version_0/checkpoints/resnet50_DualBranch_C8_seed1_epoch(06)_R1[0.6070].ckpt
+Rotation: 15.0°
+Offset: [0.0, 0.0]
+Yaw Threshold: 60.0°
+
+Results:
+----------------------------------------------------------------------
+Database: Sequence Sequence5
+
+Query 1 (Seq Sequence4): Recall@1 = 0.5069 (50.69%)
+
+Average Recall@1: 0.5069 (50.69%)
+
+======================================================================
+Failed Images:
+======================================================================
+
+Sequence 1: 250 failures
