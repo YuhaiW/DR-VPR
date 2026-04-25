@@ -1,38 +1,25 @@
-# Pretrained DR-VPR checkpoints
+# Pretrained checkpoints — code-only release
 
-The 3-seed Branch-2 (E2ResNet C₁₆ multi-scale) checkpoints used in the paper will be released here upon paper acceptance.
+This is a **code-only release**. To reproduce the paper's main number (ConSLAM R@1 = 62.65 ± 0.82 over 3 seeds), train Branch 2 (the C₁₆-equivariant E2ResNet) from scratch using `train_equi_standalone.py`.
 
-Each checkpoint is small (≤ 5 MB) because Branch 1 (BoQ-ResNet50) is frozen and loaded from the [official Bag-of-Queries release](https://github.com/amaralibey/Bag-of-Queries) at runtime via `torch.hub`.
+## Training cost
 
-## Expected layout (after download)
+| Component | Trainable params | Time per seed (RTX 5090) | Total (3 seeds) |
+| :--- | ---: | ---: | ---: |
+| Branch 1 (BoQ-ResNet50) | 0 (frozen, loaded from torch.hub) | — | — |
+| Branch 2 (E2ResNet C₁₆) | 0.67 M | ≈ 6 hours | ≈ 18 hours |
 
-```
-checkpoints/
-├── equi_seed1.ckpt        # ConSLAM val-best, seed 1
-├── equi_seed42.ckpt       # ConSLAM val-best, seed 42  (closest to 3-seed mean)
-├── equi_seed190223.ckpt   # ConSLAM val-best, seed 190223
-└── README.md              # this file
-```
-
-## Reproducing paper results (after download)
+## Reproduce paper main number
 
 ```bash
-# Single-seed evaluation
-python eval_rerank_standalone.py --dataset conslam --ckpt checkpoints/equi_seed42.ckpt --beta 0.10
-# → R@1 ≈ 62.65 (paper main: 62.65 ± 0.82 over 3 seeds)
-
-# 3-seed mean (matches paper Table 1)
-for seed in 1 42 190223; do
-    python eval_rerank_standalone.py --dataset conslam --ckpt checkpoints/equi_seed${seed}.ckpt --beta 0.10
-done
-```
-
-## Training from scratch (no checkpoints needed)
-
-If you do not want to wait for the release, you can train Branch 2 from scratch in ~6 hours per seed on an RTX 5090:
-
-```bash
+# Train 3 seeds
 for seed in 1 42 190223; do
     python ../train_equi_standalone.py --seed $seed
 done
+
+# Evaluate with joint scoring (β = 0.10)
+python ../eval_rerank_standalone.py --dataset conslam --beta 0.10
+python ../eval_rerank_standalone.py --dataset conpr   --beta 0.10
 ```
+
+Branch 1 is **never trained** — it is loaded frozen from the official Bag-of-Queries release at runtime (no manual download needed). Each Branch-2 checkpoint is small (~2–5 MB), so 3 seeds together fit easily under any storage budget.
