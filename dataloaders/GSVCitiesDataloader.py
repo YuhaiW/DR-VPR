@@ -124,6 +124,17 @@ class GSVCitiesDataModule(pl.LightningDataModule):
                         yaw_threshold=self.conpr_yaw_threshold
                     )
                     self.val_datasets.append(conpr_dataset)
+                elif valid_set_name.lower() == 'conslam':
+                    # ConSLAM val: db=Sequence5, query=Sequence4, theta=15° rotation,
+                    # yaw_threshold reuses conpr_yaw_threshold for consistency.
+                    # Conslam_dataset_rot.InferDataset handles its own image transform
+                    # (Resize+ToTensor+Normalize), so valid_transform is NOT passed.
+                    from dataloaders.ConSLAMValidation import get_conslam_validation_set
+                    conslam_dataset = get_conslam_validation_set(
+                        yaw_threshold=self.conpr_yaw_threshold,
+                        theta_degrees=15.0,
+                    )
+                    self.val_datasets.append(conslam_dataset)
                 # elif valid_set_name.lower() == 'msls_val':
                 #     self.val_datasets.append(MapillaryDataset.MSLS(
                 #         input_transform=self.valid_transform))

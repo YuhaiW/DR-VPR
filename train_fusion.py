@@ -2,14 +2,70 @@
 Dual-Branch VPR Training Script
 Combines standard ResNet + MixVPR with E2ResNet for rotation robustness
 """
+import os
 import pytorch_lightning as pl
 import torch
+import torch.nn.functional as F
+import torchvision.transforms.functional as TF
 from pytorch_lightning.callbacks import ModelCheckpoint
 from torch.optim import lr_scheduler
 import utils
 
 from dataloaders.GSVCitiesDataloader import GSVCitiesDataModule
 from models import helper_1 as helper
+
+
+# BoQ pretrained checkpoint was trained with Sequential-style ResNet50 backbone
+# (backbone.net.[0,1,4,5,6]); our DR-VPR uses named attrs (conv1/bn1/layer1-3).
+# Rewrite keys on load so strict=False absorbs just the true misses.
+_BOQ_BACKBONE_RENAME = {
+    'net.0': 'conv1',
+    'net.1': 'bn1',
+    'net.4': 'layer1',
+    'net.5': 'layer2',
+    'net.6': 'layer3',
+}
+
+
+def _rename_backbone_key(k):
+    for src, dst in _BOQ_BACKBONE_RENAME.items():
+        if k.startswith(src + '.'):
+            return dst + k[len(src):]
+    return k
+
+
+def load_boq_pretrained(
+    model,
+    url='https://github.com/amaralibey/Bag-of-Queries/releases/download/v1.0/resnet50_16384.pth'
+):
+    """Initialize Branch-1 (ResNet50 + BoQ head) from BoQ's public checkpoint."""
+    sd = torch.hub.load_state_dict_from_url(url, map_location='cpu')
+    if isinstance(sd, dict) and 'state_dict' in sd:
+        sd = sd['state_dict']
+
+    bk, ag = {}, {}
+    for k, v in sd.items():
+        if k.startswith('backbone.'):
+            bk[_rename_backbone_key(k[len('backbone.'):])] = v
+        elif k.startswith('aggregator.'):
+            ag[k[len('aggregator.'):]] = v
+
+    mb, ub = model.backbone.load_state_dict(bk, strict=False)
+    if hasattr(model.aggregator, 'branch1_aggregator'):
+        target = model.aggregator.branch1_aggregator.boq
+    else:
+        target = model.aggregator.boq
+    ma, ua = target.load_state_dict(ag, strict=False)
+    print(f'[pretrain] backbone  missing={len(mb)}  unexpected={len(ub)}')
+    print(f'[pretrain] boq head  missing={len(ma)}  unexpected={len(ua)}')
+    if mb:
+        print(f'[pretrain]   backbone missing sample: {list(mb)[:3]}')
+    if ub:
+        print(f'[pretrain]   backbone unexpected sample: {list(ub)[:3]}')
+    if ma:
+        print(f'[pretrain]   boq missing sample: {list(ma)[:3]}')
+    if ua:
+        print(f'[pretrain]   boq unexpected sample: {list(ua)[:3]}')
 
 
 class VPRModel(pl.LightningModule):
@@ -113,22 +169,25 @@ class VPRModel(pl.LightningModule):
                 backbone_arch, pretrained, layers_to_freeze, layers_to_crop
             )
             branch1_agg = helper.get_aggregator(agg_arch, agg_config)
-            branch1_out_dim = agg_config.get('out_rows', 4) * agg_config['out_channels']
+            branch1_out_dim = getattr(branch1_agg, 'out_dim', None) \
+                or agg_config.get('out_rows', 4) * agg_config.get('out_channels', 1024)
             
             # Branch 2: Equivariant CNN
+            _pool_mode = os.environ.get('GROUP_POOL_MODE', 'max')
             self.backbone2 = helper.get_equivariant_backbone(
                 orientation=equi_orientation,
                 layers=equi_layers,
                 channels=equi_channels,
-                pretrained=False
+                pretrained=False,
+                group_pool_mode=_pool_mode,
             )
             
-            #  KEY FIX: Calculate correct output channels after GroupPooling
-            # After GroupPooling: channels = equi_channels[-1] / orientation
-            # Example: 512 / 8 = 64 channels
-            branch2_in_channels = equi_channels[-1] // equi_orientation
-            
-            print(f"   Branch 2 output: {equi_channels[-1]} equivariant → {branch2_in_channels} invariant channels")
+            # Invariant channel count depends on pool mode — read from the backbone
+            # instance so max/mean=64, fourier=320 all route correctly. Previous
+            # hardcoded `equi_channels[-1] // equi_orientation` only held for max/mean.
+            branch2_in_channels = self.backbone2.out_channels
+
+            print(f"   Branch 2 output: {equi_channels[-1]} equivariant → {branch2_in_channels} invariant channels (pool={_pool_mode})")
             print(f"   Branch 2 descriptor: {branch2_in_channels} → {equi_out_dim} dim")
             
             # Dual-branch aggregator
@@ -175,39 +234,102 @@ class VPRModel(pl.LightningModule):
             # Dual branch
             branch1_features = self.backbone(x)
             branch2_features = self.backbone2(x)
-            
-                # Normal forward
+
+            if return_features:
+                # Extract per-branch descriptors using the SAME path as eval_rerank.py
+                # (eval_rerank.py:68-69): train/eval consistency is critical — desc_equi
+                # trained here must be the same thing eval reranks with.
+                # Note: the sub-aggregator outputs are NOT L2-normalized here; downstream
+                # losses (L_equi, L_rot) apply their own F.normalize on desc_equi, and
+                # the full aggregator handles L2-norm for desc_fused internally.
+                desc_boq = self.aggregator.branch1_aggregator(branch1_features)
+                desc_equi = self.aggregator.branch2_aggregator(branch2_features)
+                desc_fused = self.aggregator(branch1_features, branch2_features)
+                return {
+                    'desc_fused': desc_fused,
+                    'desc_boq': desc_boq,
+                    'desc_equi': desc_equi,
+                    'branch1_features': branch1_features,
+                    'branch2_features': branch2_features,
+                }
+
+            # Default: fused descriptor (preserves behavior for validation_step and
+            # any existing ckpt loading that expects scalar return)
             descriptor = self.aggregator(branch1_features, branch2_features)
             return descriptor
     
+    def _build_param_groups(self):
+        """
+        Layered LR for Equi-BoQ:
+          - backbone.* (pretrained ResNet50 from BoQ checkpoint):        0.1x
+          - aggregator.branch1_aggregator.* (pretrained BoQ head):       1.0x
+          - aggregator.branch2_aggregator.* + backbone2.* (from scratch):1.0x
+        Any other params (projections, fusion) default to 1.0x.
+        Only include params with requires_grad=True to skip frozen layer1/conv1.
+        """
+        backbone_params, boq_params, equi_params, other_params = [], [], [], []
+        for name, p in self.named_parameters():
+            if not p.requires_grad:
+                continue
+            if name.startswith('backbone.') and not name.startswith('backbone2.'):
+                backbone_params.append(p)
+            elif name.startswith('aggregator.branch1_aggregator'):
+                boq_params.append(p)
+            elif name.startswith('aggregator.branch2_aggregator') or name.startswith('backbone2.'):
+                equi_params.append(p)
+            else:
+                other_params.append(p)
+
+        base_lr = self.lr
+        groups = []
+        # Pretrained BoQ checkpoint is already near-optimal — move it very
+        # slowly so we don't wreck the 84%-level features. Equi branch is
+        # the one that needs to learn; train it at the base rate.
+        if backbone_params:
+            groups.append({'params': backbone_params, 'lr': base_lr * 0.02, 'name': 'backbone'})   # 2e-5
+        if boq_params:
+            groups.append({'params': boq_params,      'lr': base_lr * 0.05, 'name': 'boq_head'})   # 5e-5
+        if equi_params:
+            groups.append({'params': equi_params,     'lr': base_lr,        'name': 'equi'})       # 1e-3
+        if other_params:
+            groups.append({'params': other_params,    'lr': base_lr,        'name': 'other'})      # 1e-3 (includes equi_gate + fusion)
+        return groups
+
     def configure_optimizers(self):
+        param_groups = self._build_param_groups() if self.use_dual_branch else self.parameters()
+
         if self.optimizer.lower() == 'sgd':
-            optimizer = torch.optim.SGD(self.parameters(), 
-                                        lr=self.lr, 
-                                        weight_decay=self.weight_decay, 
+            optimizer = torch.optim.SGD(param_groups,
+                                        lr=self.lr,
+                                        weight_decay=self.weight_decay,
                                         momentum=self.momentum)
         elif self.optimizer.lower() == 'adamw':
-            optimizer = torch.optim.AdamW(self.parameters(), 
-                                        lr=self.lr, 
+            optimizer = torch.optim.AdamW(param_groups,
+                                        lr=self.lr,
                                         weight_decay=self.weight_decay)
         elif self.optimizer.lower() == 'adam':
-            optimizer = torch.optim.Adam(self.parameters(), 
-                                        lr=self.lr, 
+            optimizer = torch.optim.Adam(param_groups,
+                                        lr=self.lr,
                                         weight_decay=self.weight_decay)
         else:
             raise ValueError(f'Optimizer {self.optimizer} has not been added')
-        
+
+        # Stash initial per-group LR so warmup can scale each group proportionally
+        for pg in optimizer.param_groups:
+            pg['initial_lr'] = pg['lr']
+
         scheduler = lr_scheduler.MultiStepLR(optimizer, milestones=self.milestones, gamma=self.lr_mult)
         return [optimizer], [scheduler]
-    
+
     def optimizer_step(self, epoch, batch_idx,
                         optimizer, optimizer_idx, optimizer_closure,
                         on_tpu=False, using_native_amp=False, using_lbfgs=False):
-        # Warm up lr
+        # Warm up lr: scale each group proportional to its own initial_lr
         if self.trainer.global_step < self.warmpup_steps:
             lr_scale = min(1., float(self.trainer.global_step + 1) / self.warmpup_steps)
             for pg in optimizer.param_groups:
-                pg['lr'] = lr_scale * self.lr
+                base = pg.get('initial_lr', self.lr)
+                pg['lr'] = lr_scale * base
         optimizer.step(closure=optimizer_closure)
         
     def loss_function(self, descriptors, labels):
@@ -232,20 +354,81 @@ class VPRModel(pl.LightningModule):
         return loss
     
     def training_step(self, batch, batch_idx):
+        """
+        Three-loss training for dual-branch Equi-BoQ (Tier-2 design).
+
+        Training serves two independent inference paths:
+          - test_conpr.py / test_conslam.py: single-stage retrieve on desc_fused
+            → supervised by L_main
+          - eval_rerank.py: two-stage BoQ retrieve + equi rerank (desc_boq, desc_equi
+            used separately) → supervised by L_equi (independent discriminative signal
+            on desc_equi) + L_rot (rotation consistency on desc_equi).
+
+        Total loss:
+            L_total = L_main + λ_equi · L_equi + λ_rot · L_rot
+
+        For single-branch models (use_dual_branch=False) this falls back to the
+        previous behavior (only L_main on descriptor).
+        """
         places, labels = batch
-        
         BS, N, ch, h, w = places.shape
-        
-        # Reshape
-        images = places.view(BS*N, ch, h, w)
+        images = places.view(BS * N, ch, h, w)
         labels = labels.view(-1)
 
-        # Forward
-        descriptors = self(images)
-        loss = self.loss_function(descriptors, labels)
-        
-        self.log('loss', loss.item(), logger=True)
-        return {'loss': loss}
+        # ---- Single-branch path (unchanged) ----
+        if not self.use_dual_branch:
+            descriptors = self(images)
+            loss = self.loss_function(descriptors, labels)
+            self.log('loss', loss.item(), logger=True)
+            return {'loss': loss}
+
+        # ---- Dual-branch three-loss path ----
+        out = self(images, return_features=True)
+        desc_fused = out['desc_fused']
+        desc_equi = out['desc_equi']
+
+        # L_main: fused descriptor MS loss (also logs b_acc internally)
+        L_main = self.loss_function(desc_fused, labels)
+
+        # L_equi: MS loss on desc_equi alone. Normalize first so it lives on the unit
+        # sphere (consistent with rerank eval which uses cosine similarity).
+        # Inline miner+loss_fn call to avoid double-logging b_acc from loss_function.
+        desc_equi_n = F.normalize(desc_equi, dim=1)
+        if self.miner is not None:
+            equi_miner_out = self.miner(desc_equi_n, labels)
+            L_equi = self.loss_fn(desc_equi_n, labels, equi_miner_out)
+        else:
+            L_equi = self.loss_fn(desc_equi_n, labels)
+            if isinstance(L_equi, tuple):
+                L_equi = L_equi[0]
+
+        # L_rot: per-batch single random θ ∈ [0, 360°). Rotate inputs and only forward
+        # the equi branch (skip BoQ — we don't need desc_boq on rotated image). Cosine
+        # similarity between original and rotated desc_equi; invariance target = 1.0.
+        theta_deg = float(torch.rand(1).item() * 360.0)
+        images_rot = TF.rotate(images, theta_deg,
+                                interpolation=TF.InterpolationMode.BILINEAR)
+        branch2_feat_rot = self.backbone2(images_rot)
+        desc_equi_rot = self.aggregator.branch2_aggregator(branch2_feat_rot)
+        desc_equi_rot_n = F.normalize(desc_equi_rot, dim=1)
+        L_rot = 1.0 - F.cosine_similarity(desc_equi_n, desc_equi_rot_n, dim=1).mean()
+
+        lambda_equi = float(os.environ.get('LAMBDA_EQUI', '0.5'))
+        lambda_rot = float(os.environ.get('LAMBDA_ROT', '0.3'))
+        total_loss = L_main + lambda_equi * L_equi + lambda_rot * L_rot
+
+        # Diagnostic logs — these are the signals that decide whether training works.
+        self.log('loss', total_loss.item(), logger=True)
+        self.log('loss_main', L_main.item(), logger=True)
+        self.log('loss_equi', L_equi.item(), logger=True)
+        self.log('loss_rot', L_rot.item(), logger=True, prog_bar=True)
+        self.log('equi_norm',
+                 desc_equi.detach().norm(dim=1).mean().item(), logger=True)
+        if hasattr(self.aggregator, 'equi_gate') and self.aggregator.equi_gate is not None:
+            self.log('gate_val', self.aggregator.equi_gate.detach().item(), logger=True)
+        self.log('rot_theta_deg', theta_deg, logger=True)
+
+        return {'loss': total_loss}
     
     def training_epoch_end(self, training_step_outputs):
         self.batch_acc = []
@@ -274,6 +457,12 @@ class VPRModel(pl.LightningModule):
                 num_queries = len(val_dataset) - num_references
                 positives = val_dataset.pIdx
             elif 'conpr' in val_set_name.lower():
+                num_references = val_dataset.num_db
+                num_queries = val_dataset.num_queries
+                positives = val_dataset.getPositives()
+            elif 'conslam' in val_set_name.lower():
+                # ConSLAMValidationDataset exposes the same interface as ConPR
+                # (num_db / num_queries / getPositives), with theta=15° baked in.
                 num_references = val_dataset.num_db
                 num_queries = val_dataset.num_queries
                 positives = val_dataset.getPositives()
@@ -311,10 +500,10 @@ if __name__ == '__main__':
 
     pl.utilities.seed.seed_everything(seed=_args.seed, workers=True)
     print(f"Seed: {_args.seed}")
-
-    # Datamodule
+    
+    # Datamodule (batch halved for 17408-dim + BoQ memory budget)
     datamodule = GSVCitiesDataModule(
-        batch_size=60,  # Reduced for dual-branch
+        batch_size=32,
         img_per_place=4,
         min_img_per_place=4,
         shuffle_all=False,
@@ -322,11 +511,11 @@ if __name__ == '__main__':
         image_size=(320, 320),
         num_workers=12,
         show_data_stats=True,
-        val_set_names=['conpr'],
+        val_set_names=['conpr', 'conslam'],   # both monitored; conslam is ckpt-selection metric
                 # Or full validation: all 10 sequences (will be slower)
         conpr_sequences=None,
 
-        conpr_yaw_threshold=80.0,
+        conpr_yaw_threshold=80.0,    # also reused as conslam yaw threshold
     )
     
     # ========================================
@@ -336,74 +525,98 @@ if __name__ == '__main__':
     # Branch 2 configuration
     equi_orientation = 8
     equi_channels = [64, 128, 256, 512]
-    
-    # Calculate actual output channels after GroupPooling
-    # GroupPooling reduces channels by the group order
-    branch2_pooled_channels = equi_channels[-1] // equi_orientation  # 512 / 8 = 64
-    
+
+    # Invariant channel count is mode-dependent (max/mean=64, fourier=320 for C8).
+    # Print the pool mode from env so it shows up in training logs.
+    _pool_mode_for_print = os.environ.get('GROUP_POOL_MODE', 'max')
+    _invariant_multiplier = (equi_orientation // 2 + 1) if _pool_mode_for_print == 'fourier' else 1
+    branch2_pooled_channels = (equi_channels[-1] // equi_orientation) * _invariant_multiplier
+
     print(f"\n{'='*60}")
-    print(f"Dual-Branch VPR Configuration:")
-    print(f"  Branch 1: ResNet50 + MixVPR")
-    print(f"    - Output: 4 × 1024 = 4096 dim")
+    print(f"Equi-BoQ DR-VPR Configuration:")
+    print(f"  Branch 1: ResNet50 (layer4 cropped) + BoQ head")
+    print(f"    - BoQ: 64 queries × 2 layers × row_dim=32 → 16384 dim")
     print(f"  Branch 2: E2ResNet (C{equi_orientation}) + GeM")
     print(f"    - Equivariant channels: {equi_channels}")
-    print(f"    - After GroupPooling: {branch2_pooled_channels} channels")
-    print(f"    - Descriptor: 512 dim")
-    print(f"  Final descriptor: 4096 + 512 = 4608 dim")
+    print(f"    - Group pool mode: {_pool_mode_for_print}")
+    print(f"    - Invariant channels after pool: {branch2_pooled_channels}")
+    print(f"    - Descriptor: 1024 dim")
+    print(f"  Fusion: attention (softmax-weighted, biased to pure BoQ at init)")
+    print(f"  Final descriptor (attention fusion): 16384 dim (Branch 2 padded into Branch 1)")
     print(f"{'='*60}\n")
-    
+
     model = VPRModel(
-        #---- Branch 1: Standard CNN
+        #---- Branch 1: Standard CNN (backbone pretrained separately via load_boq_pretrained)
         backbone_arch='resnet50',
         pretrained=True,
         layers_to_freeze=2,
-        layers_to_crop=[4],  # Crop layer4, use layer3 output (1024 channels)
-        
-        #---- Branch 1: Aggregator (MixVPR)
-        agg_arch='MixVPR',
+        layers_to_crop=[4],  # Keep: BoQ pretrained expects layer3 1024-ch
+
+        #---- Branch 1: Aggregator (BoQ)
+        agg_arch='boq',
         agg_config={
-            'in_channels': 1024,      # ResNet layer3 output
-            'in_h': 20,               # 320 / 16 = 20
-            'in_w': 20,
-            'out_channels': 1024,
-            'mix_depth': 4,
-            'mlp_ratio': 1,
-            'out_rows': 4
-        },  # Output: 4 × 1024 = 4096 dim
-        
+            'in_channels': 1024,
+            'proj_channels': 512,
+            'num_queries': 64,
+            'num_layers': 2,
+            'row_dim': 32,
+        },  # Output: 512 × 32 = 16384 dim
+
         #---- Branch 2: Equivariant CNN
-        use_dual_branch=True,              # Enable dual-branch
-        equi_orientation=equi_orientation,  # C8 rotation group
-        equi_layers=[2, 2, 2, 2],          # ResNet18-like
-        equi_channels=equi_channels,       # [64, 128, 256, 512]
-        equi_out_dim=512,                  # Final descriptor dimension
-        fusion_method='attention', #'attention',            # Concatenate both branches
+        use_dual_branch=True,
+        equi_orientation=equi_orientation,  # C8
+        equi_layers=[2, 2, 2, 2],
+        equi_channels=equi_channels,
+        equi_out_dim=1024,                  # expanded from 512 to rebalance
+        fusion_method=os.environ.get('FUSION_METHOD', 'concat'),
         use_projection=False,
-        
-        #---- Train hyperparameters
-        lr=0.04,
-        optimizer='sgd',
-        weight_decay=0.001,
-        momentum=0.9,
-        warmpup_steps=650,
-        milestones=[5, 10, 15, 25],
+
+        #---- Train hyperparameters (AdamW + layered LR; see configure_optimizers override)
+        lr=1e-3,                  # base; backbone overridden to 1e-4 in configure_optimizers
+        optimizer='adamw',
+        weight_decay=1e-4,
+        momentum=0.9,             # unused by AdamW
+        warmpup_steps=300,
+        milestones=[8, 14],
         lr_mult=0.3,
-        
+
         #---- Loss
         loss_name='MultiSimilarityLoss',
         miner_name='MultiSimilarityMiner',
         miner_margin=0.1,
         faiss_gpu=False
     )
-    
+
+    # Cold-start Branch-1 (ResNet50 backbone + BoQ head) from public BoQ weights.
+    load_boq_pretrained(model)
+
+    # Optionally freeze ALL of Branch 1 (backbone + BoQ head) so pretrained
+    # features are preserved exactly. Only equi branch + gate train.
+    _freeze_boq = os.environ.get('FREEZE_BOQ', '0') == '1'
+    if _freeze_boq:
+        frozen_count = 0
+        for name, p in model.named_parameters():
+            if name.startswith('backbone.') and not name.startswith('backbone2.'):
+                p.requires_grad_(False)
+                frozen_count += 1
+            elif name.startswith('aggregator.branch1_aggregator'):
+                p.requires_grad_(False)
+                frozen_count += 1
+        trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
+        total = sum(p.numel() for p in model.parameters())
+        print(f"[FREEZE_BOQ] Froze {frozen_count} Branch-1 param tensors.")
+        print(f"[FREEZE_BOQ] Trainable: {trainable:,} / {total:,} total ({trainable/total*100:.1f}%)")
+
     # Checkpoint callback
+    _tag = os.environ.get('RUN_TAG', model.fusion_method)
+    run_tag = f"{model.encoder_arch}_DualBranch_{_tag}_seed{_args.seed}"
     checkpoint_cb = ModelCheckpoint(
-        monitor='conpr/R1',
-        filename=f'{model.encoder_arch}_DualBranch_C{model.equi_orientation}_seed{_args.seed}' +
-        '_epoch({epoch:02d})_R1[{conpr/R1:.4f}]',
+        monitor='conslam/R1',     # ckpt selection driven by ConSLAM (rotation-heavy target)
+        filename=f'{model.encoder_arch}_DualBranch_C{model.equi_orientation}_{model.fusion_method}_seed{_args.seed}' +
+        '_epoch({epoch:02d})_R1[{conslam/R1:.4f}]',
         auto_insert_metric_name=False,
         save_weights_only=True,
-        save_top_k=3,
+        save_top_k=-1,     # save EVERY epoch — per-epoch eval protocol
         mode='max',
     )
 
@@ -411,23 +624,25 @@ if __name__ == '__main__':
     trainer = pl.Trainer(
         accelerator='gpu',
         devices=[0],
-        default_root_dir=f'./LOGS/{model.encoder_arch}_DualBranch_seed{_args.seed}',
+        default_root_dir=f'./LOGS/{run_tag}',
         num_sanity_val_steps=0,
         precision=16,  # Mixed precision training
-        max_epochs=40,
+        max_epochs=10,
         check_val_every_n_epoch=1,
         callbacks=[checkpoint_cb],
         reload_dataloaders_every_n_epochs=1,
         log_every_n_steps=20,
     )
-    
+
     # Start training
+    final_dim = model.aggregator.out_dim
     print("\n" + "="*60)
-    print("Starting Dual-Branch VPR Training")
-    print("  - Model: ResNet50 + MixVPR || E2ResNet + GeM")
-    print("  - Descriptor: 4608 dim (4096 + 512)")
+    print("Starting Equi-BoQ DR-VPR Training")
+    print("  - Model: ResNet50 + BoQ || E2ResNet + GeM")
+    print(f"  - Fusion: {model.fusion_method}")
+    print(f"  - Descriptor: {final_dim} dim")
     print("  - Dataset: GSV-Cities")
-    print("  - Validation: Pittsburgh 30k")
+    print("  - Validation: ConPR")
     print("="*60 + "\n")
     
     trainer.fit(model=model, datamodule=datamodule)

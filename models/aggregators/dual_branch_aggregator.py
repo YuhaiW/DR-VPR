@@ -6,32 +6,40 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class AttentionFusion(nn.Module):
-    """Learn optimal fusion weights between two branches"""
-    def __init__(self, dim1, dim2):
+    """Low-rank per-sample gate between two branches.
+
+    Each branch descriptor is first compressed to a small summary; the pair
+    of summaries drives a tiny scoring head that emits two softmax weights.
+    The weights mix the original (uncompressed) descriptors, so capacity is
+    preserved while the gating parameters stay light.
+
+    Softmax bias is initialized to (+2.0, 0.0) so that at t=0 the output is
+    ≈0.881·Branch 1 + 0.119·Branch 2. This preserves the pretrained BoQ signal
+    while leaving the equivariant branch a real gradient pathway. An earlier
+    bias of (+10, 0) saturated the softmax and effectively froze w2≈1e-4,
+    causing the equi branch to never contribute (verified across 3 seeds).
+    """
+    def __init__(self, dim1, dim2, summary_dim=64):
         super().__init__()
-        # 学习每个分支的重要性
-        self.attention = nn.Sequential(
-            nn.Linear(dim1 + dim2, 512),
-            nn.ReLU(),
-            nn.Dropout(0.1),
-            nn.Linear(512, 2),
-            nn.Softmax(dim=1)
-        )
-        
+        self.dim1 = dim1
+        self.dim2 = dim2
+        self.proj1 = nn.Linear(dim1, summary_dim)
+        self.proj2 = nn.Linear(dim2, summary_dim)
+        self.score = nn.Linear(2 * summary_dim, 2)
+        # Init: softmax output ≈ (0.881, 0.119) regardless of input
+        with torch.no_grad():
+            self.score.weight.zero_()
+            self.score.bias.copy_(torch.tensor([2.0, 0.0]))
+
     def forward(self, desc1, desc2):
-        # desc1: (B, 4096), desc2: (B, 512)
-        concat = torch.cat([desc1, desc2], dim=1)  # (B, 4608)
-        
-        # 计算注意力权重
-        weights = self.attention(concat)  # (B, 2)
+        s = torch.cat([self.proj1(desc1), self.proj2(desc2)], dim=1)  # (B, 2*summary_dim)
+        weights = F.softmax(self.score(s), dim=1)                      # (B, 2)
         w1, w2 = weights[:, 0:1], weights[:, 1:2]
-        
-        # 加权融合
-        # 先投影到相同维度
-        desc1_proj = desc1 * w1  # 广播
-        desc2_proj = F.pad(desc2, (0, 4096-512)) * w2  # pad到4096维
-        
-        fused = desc1_proj + desc2_proj
+
+        desc1_w = desc1 * w1                                            # (B, dim1)
+        desc2_w = F.pad(desc2, (0, self.dim1 - self.dim2)) * w2         # pad to dim1
+
+        fused = desc1_w + desc2_w
         return F.normalize(fused, p=2, dim=1)
     
 
@@ -84,6 +92,13 @@ class DualBranchAggregator(nn.Module):
             out_channels=branch2_out_dim,
             p=3.0
         )
+
+        # Zero-init gate: desc2 is scaled by a learnable scalar that starts at 0.
+        # So at initialization the fused descriptor == pure BoQ descriptor
+        # (up to global L2-normalization). The gate grows only if the equi
+        # branch produces useful signal. Prevents random-init equi from
+        # destroying BoQ pretrained features.
+        self.equi_gate = nn.Parameter(torch.zeros(1))
         
         # Optional: projection layers before fusion
         self.use_projection = use_projection
@@ -114,15 +129,28 @@ class DualBranchAggregator(nn.Module):
         """
         # Branch 1: standard aggregation (e.g., MixVPR)
         desc1 = self.branch1_aggregator(x1)  # (B, branch1_out_dim)
-        
+
         # Branch 2: equivariant feature aggregation
         desc2 = self.branch2_aggregator(x2)  # (B, branch2_out_dim)
-        
+
         # Optional projection
         if self.use_projection:
             desc1 = self.proj1(desc1)
             desc2 = self.proj2(desc2)
-        
+
+        # Per-branch L2-norm BEFORE fusion: prevents the larger-dim branch
+        # from swamping the smaller-dim branch (critical when Branch 1 is
+        # 16384-dim BoQ and Branch 2 is 1024-dim GeM)
+        desc1 = F.normalize(desc1, p=2, dim=1)
+        desc2 = F.normalize(desc2, p=2, dim=1)
+
+        # Zero-init gate on equi branch: keeps pure BoQ behavior at t=0.
+        # Skipped for attention fusion — the softmax-bias init in
+        # AttentionFusion already pins w2≈0 at t=0, so gating desc2 twice
+        # would be redundant and would double-throttle the equi signal.
+        if self.fusion_method != 'attention':
+            desc2 = desc2 * self.equi_gate
+
         # Fusion
         if self.fusion_method == 'concat':
             fused = torch.cat([desc1, desc2], dim=1)  # (B, D1+D2)

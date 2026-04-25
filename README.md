@@ -2,51 +2,64 @@
 
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-Automation%20in%20Construction-blue)](https://github.com/YuhaiW/DR-VPR) 
-[![Framework](https://img.shields.io/badge/PyTorch-2.0.1-red)](https://pytorch.org/) 
+[![Paper](https://img.shields.io/badge/Paper-Automation%20in%20Construction-blue)](https://github.com/YuhaiW/DR-VPR)
+[![Framework](https://img.shields.io/badge/PyTorch-2.0.1%20%7C%202.8.0-red)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-**State-of-the-art Visual Place Recognition for Dynamic Construction Environments**
+**Visual Place Recognition for handheld and UAV capture in dynamic construction environments**
 
 </div>
 
-## 📖 Introduction
+## 📖 Overview
 
-This repository contains the official implementation of **DR-VPR**, a dual-branch architecture designed for robust localization in dynamic construction sites using handheld devices or UAVs.
+DR-VPR is a dual-branch retrieval architecture for VPR in construction sites, where handheld scanners and UAVs introduce in-plane rotations and rapid scene evolution that defeat conventional VPR methods.
 
-**Key Insight:** Instead of forcing a standard CNN to "memorize" rotation invariance through massive data augmentation (which we prove degrades discriminability), we explicitly encode geometric priors using a rotation-equivariant branch.
+**Architecture (one line):**
+A frozen pretrained **BoQ-ResNet50** discriminative branch is paired with a lightweight **C₁₆-equivariant E2ResNet** branch (0.67 M parameters); the two branches are trained independently and combined only at inference through a weighted joint-scoring rule, `score = (1−β)·⟨d₁,d₁⟩ + β·⟨d₂,d₂⟩` with β = 0.10.
 
-**Highlights:**
-- 🏆 **SOTA Performance:** Outperforms MixVPR and CosPlace on **ConPR** (+1.6%) and **ConSLAM** (+3.5%) benchmarks.
-- ⚡ **Real-Time Latency:** Extremely fast inference (**4.23 ms** on RTX 6000) suitable for embedded robotics.
-- 🔄 **Equivariance > Augmentation:** Empirically resolves the *invariance-discriminability trade-off*, achieving superior robustness without explicit rotation augmentation training.
+**Why decoupled inference-time fusion?**
+A systematic ablation in the paper (Table 4) shows that train-time attention or gated-concat fusion suffers from branch-weight saturation under strong pretrained features (the equivariant branch's weight collapses to ∼10⁻⁴). Inference-time joint scoring decouples the branches and recovers the full gain.
 
-## 🏗️ Architecture
+## 📊 Results
 
-![Architecture](assets/architecture.png)
-*Figure: Overview of DR-VPR. Branch 1 (ResNet-50 + MixVPR) captures discriminative semantic features, while Branch 2 (E2ResNet + GeM) ensures mathematical rotation invariance. An attention mechanism dynamically fuses these cues.*
+**ConSLAM (rotation-heavy handheld benchmark, 307 valid queries)**
+
+| Method | Backbone | Params (M) | Lat. (ms) | R@1 | R@5 | R@10 |
+| :--- | :--- | ---: | ---: | ---: | ---: | ---: |
+| CosPlace        | ResNet50 | 27.70 | 1.38 | 44.30 | 67.10 | 74.27 |
+| MixVPR          | ResNet50 | 10.88 | 1.38 | 56.03 | 74.59 | 77.85 |
+| BoQ (ResNet50)  | ResNet50 | 23.84 | 2.12 | 60.91 | 75.24 | 78.83 |
+| **DR-VPR (ours)** | R50 + E2ResNet(C16) | **24.51** | **4.24** | **62.65 ± 0.82** | **75.68 ± 0.50** | **79.80 ± 0.66** |
+
+**ConPR (full 10-sequence cross-validation protocol)**
+
+| Method | Params (M) | R@1 |
+| :--- | ---: | ---: |
+| CosPlace | 27.70 | 73.48 |
+| MixVPR   | 10.88 | 78.55 |
+| BoQ (ResNet50) | 23.84 | 79.30 |
+| **DR-VPR (ours)** | **24.51** | **79.81 ± 0.21** |
+
+DR-VPR is **3.5–4.2× smaller** than DINOv2-backbone baselines (SALAD 87.99 M, CricaVPR 106.76 M) at 4.24 ms per image on an RTX 5090, while delivering a statistically significant +1.74 R@1 improvement on rotation-heavy ConSLAM (one-sample _t_-test, _t_ = 3.67, _p_ < 0.05 across 3 seeds).
 
 ## 🛠️ Installation
 
-We provide two installation paths depending on your GPU architecture. Please follow the one that matches your hardware.
-
-1. **Clone the repository**
+1. **Clone**
    ```bash
    git clone https://github.com/YuhaiW/DR-VPR.git
    cd DR-VPR
    ```
 
-2. **Create a Conda environment**
-
+2. **Conda environment**
    ```bash
-   conda create -n drvpr python=3.9
+   conda create -n drvpr python=3.9 -y
    conda activate drvpr
    ```
 
-3. **Install PyTorch** *(must be installed before other requirements)*
+3. **PyTorch** (pick the path matching your GPU)
 
    <details>
-   <summary><b>Option A: Ampere / Ada Lovelace GPUs (RTX 30xx, 40xx, A100, etc.) — CUDA 11.8</b></summary>
+   <summary><b>Ampere / Ada Lovelace (RTX 30xx, 40xx, A100) — CUDA 11.8</b></summary>
 
    ```bash
    pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2+cu118 \
@@ -55,110 +68,123 @@ We provide two installation paths depending on your GPU architecture. Please fol
    </details>
 
    <details open>
-   <summary><b>Option B: Blackwell GPUs (RTX 5090, B100, B200, etc.) — CUDA 12.8</b></summary>
+   <summary><b>Blackwell (RTX 5090, B100/B200) — CUDA 12.8</b></summary>
 
-   Blackwell GPUs (sm_120) require PyTorch ≥ 2.8 with CUDA 12.8.
    ```bash
    pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 \
        --index-url https://download.pytorch.org/whl/cu128
+   pip install "numpy<2"   # required for faiss-gpu compatibility
    ```
-
-   > **Note:** After installing, downgrade NumPy to 1.x for compatibility with `faiss-gpu`:
-   > ```bash
-   > pip install "numpy<2"
-   > ```
    </details>
 
-4. **Install Dependencies**
-
+4. **Other dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-### Verified Environments
-
-| GPU | PyTorch | CUDA | Python | Status |
-|:----|:--------|:-----|:-------|:-------|
-| NVIDIA RTX 6000 (Ada) | 2.0.1+cu118 | 11.8 | 3.9 | ✅ Tested |
-| NVIDIA RTX 5090 (Blackwell) | 2.8.0+cu128 | 12.8 | 3.9 | ✅ Tested |
+| Verified GPU | PyTorch | CUDA | Python |
+| :--- | :--- | :--- | :--- |
+| RTX 6000 (Ada) | 2.0.1 | 11.8 | 3.9 |
+| RTX 5090 (Blackwell) | 2.8.0 | 12.8 | 3.9 |
 
 ## 📂 Data Preparation
 
-### 1\. GSV-Cities (Training)
+Place datasets under `./datasets/`.
 
-Download the [GSV-Cities dataset](https://github.com/amaralibey/gsv-cities). The code expects the following structure in `./datasets/`:
-
-```text
-datasets/
-└── GSV-Cities/
-    ├── Dataframes/   # Contains .csv files (Bangkok.csv, etc.)
-    └── Images/       # Contains city folders (Bangkok/, etc.)
+### 1. GSV-Cities (training)
+[Download GSV-Cities](https://github.com/amaralibey/gsv-cities) and arrange as:
+```
+datasets/GSV-Cities/
+├── Dataframes/    # .csv files (Bangkok.csv, ...)
+└── Images/        # city folders (Bangkok/, ...)
 ```
 
-### 2\. Evaluation Datasets
+### 2. Construction benchmarks (evaluation)
 
-| Project | Ready-to-Run Version | Original Source |
+| Dataset | Ready-to-run | Original source |
 | :--- | :--- | :--- |
-| **ConPR** | [Download here](https://drive.google.com/file/d/1IwfYyKhdu8hsoLxXQ7TrZabkawMt-Qge/view?usp=sharing) | [Official Repository](https://github.com/dongjae0107/ConPR.git) |
-| **ConSLAM** | [Download here](https://drive.google.com/file/d/1uudYN0WuWhkMYqg-6-LFDL6ueFNCoI3D/view?usp=sharing) | [Official Repository](https://github.com/mac137/ConSLAM.git) |
-## 🚀 Training
+| **ConPR** | [Download (Drive)](https://drive.google.com/file/d/1IwfYyKhdu8hsoLxXQ7TrZabkawMt-Qge/view?usp=sharing) | [dongjae0107/ConPR](https://github.com/dongjae0107/ConPR) |
+| **ConSLAM** | [Download (Drive)](https://drive.google.com/file/d/1uudYN0WuWhkMYqg-6-LFDL6ueFNCoI3D/view?usp=sharing) | [mac137/ConSLAM](https://github.com/mac137/ConSLAM) |
+
+Extract under `./datasets/ConPR/` and `./datasets/ConSLAM/`.
+
+## 🚀 Quick Start
+
+### Option A: Evaluate with released checkpoints
+
+The 3-seed pretrained Branch-2 checkpoints used in the paper (each ≤ 5 MB; BoQ branch is loaded automatically from the official torch.hub release):
+
+> **Pretrained weights:** _Will be released upon paper acceptance — see `checkpoints/README.md`._
 
 ```bash
-python train_fusion.py \
-    --backbone_arch resnet50 \
-    --agg_arch MixVPR \
-    --use_dual_branch \
-    --equi_orientation 8 \
-    --fusion_method attention \
-    --batch_size 60 \
-    --lr 0.04
+# After downloading checkpoints into ./checkpoints/
+python eval_rerank_standalone.py \
+    --dataset conslam \
+    --ckpt checkpoints/equi_seed42.ckpt \
+    --beta 0.10
+# → R@1 ≈ 62-63 (single-seed; paper reports 62.65 ± 0.82 over 3 seeds)
 ```
 
-## 📊 Evaluation & Results
-
-To evaluate a trained checkpoint:
+### Option B: Train from scratch (≈ 6 h per seed on RTX 5090)
 
 ```bash
-python test_conpr.py --checkpoint_path LOGS/resnet50_DualBranch/best_model.ckpt
+# Train Branch 2 (the C16-equivariant standalone) for each seed
+for seed in 1 42 190223; do
+    python train_equi_standalone.py --seed $seed
+done
+
+# Evaluate the resulting checkpoints with joint scoring
+python eval_rerank_standalone.py --dataset conslam --beta 0.10
+python eval_rerank_standalone.py --dataset conpr   --beta 0.10
 ```
 
-### 🏆 Comprehensive Results (ConPR & ConSLAM)
+Branch 1 (BoQ-ResNet50) is **frozen** throughout and loaded from the official Bag-of-Queries release at runtime. Only the 0.67 M parameters of Branch 2 are trained.
 
-Comparison of Recall@1 scores across dynamic construction sequences (ConPR) and handheld scanning (ConSLAM). 
-**MixVPR + Rot. Aug.** denotes the baseline retrained with rotation augmentation ($p=0.5, \theta \in [0, 360^\circ)$).
+## 🧪 Reproducing the baselines
 
-| Method | Dim | 0531 | 0611 | 0627 | 0628 | 0706 | 0717 | 0803 | 0809 | 0818 | **ConPR Avg** | **ConSLAM** |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| CosPlace† | 2048 | *58.85* | 71.92 | 91.96 | 90.84 | 82.96 | 64.26 | 75.87 | 75.84 | 62.61 | 74.96 | 48.26 |
-| AnyLoc-v1† | 3072 | 46.70 | 67.78 | 87.07 | 84.89 | 81.60 | 60.95 | 65.22 | 74.46 | 63.16 | 70.20 | 38.19 |
-| AnyLoc-v2† | 12288 | 51.68 | 70.14 | 89.78 | 86.74 | 86.29 | **78.34** | **82.68** | **82.37** | 69.67 | 77.52 | 48.26 |
-| MixVPR† | 4096 | 56.72 | 75.19 | 92.07 | *94.63* | *86.86* | 70.56 | *81.51* | 76.90 | *72.54* | *78.55* | 56.90 |
-| MixVPR + Rot. Aug. | 4096 | 58.69 | **76.85** | **93.80** | 93.54 | 86.26 | 68.62 | 72.85 | 75.11 | 69.44 | 77.24 | *57.33* |
-| **DR-VPR (Ours)** | 4096 | **59.85** | *76.16* | *93.04* | **94.74** | **89.10** | *71.24* | 81.15 | *81.03* | **75.09** | **80.15** | **60.40** |
+```bash
+python eval_baselines.py --method all --dataset all --seeds 1 42 123
+# Evaluates CosPlace, MixVPR, BoQ-R50, BoQ-DINOv2, SALAD, CricaVPR, DINOv2 alone
+# on both ConSLAM and ConPR, reporting R@1/5/10.
+```
 
-*† Official pretrained models.*
+## ⏱️ Latency benchmarking
 
-*Inference time measured on NVIDIA RTX 6000 with batch size 1.*
-## Qualitative Analysis
+```bash
+python benchmark_latency.py
+# Reports forward-pass time on the available GPU at 320×320 resolution
+```
 
-Visual comparison demonstrating robustness against extreme rotation and structural changes.
-![Qualitative](assets/qualitative.png)
+## 📁 Repository layout
 
-
-Figure: Query image (Left), Top-1 Match by DR-VPR (Middle), Top-1 Match by Baseline (Right).
+```
+DR-VPR/
+├── train_fusion.py              # joint train-time fusion entry (legacy / ablation)
+├── train_equi_standalone.py     # canonical Branch-2 trainer (paper main)
+├── eval_rerank_standalone.py    # canonical evaluator (paper main: BoQ + C16 standalone)
+├── eval_rerank.py               # eval for full DualBranch checkpoints
+├── eval_baselines.py            # 6 baseline evaluations
+├── benchmark_latency.py         # inference-time measurement
+├── test_conpr.py / test_conslam.py
+├── conpr_eval_dataset_rot.py    # ConPR data interface
+├── Conslam_dataset_rot.py       # ConSLAM data interface
+├── models/                      # backbones, aggregators (BoQ, MixVPR, GeM, ...), E2ResNet
+├── dataloaders/                 # GSV-Cities + construction val sets
+├── utils/                       # losses, validation helpers
+└── assets/                      # README figures
+```
 
 ## 🎓 Citation
 
-If you use this code in your research, please cite our paper:
-
 ```bibtex
-@article{wang5962659dr,
-  title={DR-VPR: Dual-Branch Rotation-Robust Visual Place Recognition for DynamicConstruction Environments},
-  author={Wang, Yuhai and Hu, Xiao and Shi, Yangming and Ye, Yang},
-  journal={Available at SSRN 5962659}
+@article{wang2026drvpr,
+  title   = {DR-VPR: Dual-Branch Rotation-Robust Visual Place Recognition for Dynamic Construction Environments},
+  author  = {Wang, Yuhai and Hu, Xiao and Shi, Yangming and Ye, Yang},
+  journal = {Automation in Construction},
+  year    = {2026}
 }
 ```
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+MIT — see [LICENSE](LICENSE).

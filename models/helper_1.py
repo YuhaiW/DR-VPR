@@ -126,16 +126,18 @@ def get_backbone(backbone_arch='resnet50',
     return backbone
 
 
-def get_equivariant_backbone(orientation=8, 
+def get_equivariant_backbone(orientation=8,
                              layers=[2, 2, 2, 2],
                              channels=[64, 128, 256, 512],
-                             pretrained=False):
+                             pretrained=False,
+                             group_pool_mode='max'):
     """Get equivariant backbone (Branch 2)"""
     return E2ResNetBackbone(
         orientation=orientation,
         layers=layers,
         channels=channels,
-        pretrained=pretrained
+        pretrained=pretrained,
+        group_pool_mode=group_pool_mode,
     )
 
 
@@ -156,7 +158,12 @@ def get_aggregator(agg_arch='ConvAP', agg_config={}):
     elif agg_arch.lower() == 'mixvpr':
         assert 'in_channels' in agg_config
         aggregator = MixVPR(**agg_config)
-        
+
+    elif agg_arch.lower() == 'boq':
+        from models.aggregators.boq_wrapper import BoQWrapper
+        assert 'in_channels' in agg_config
+        aggregator = BoQWrapper(**agg_config)
+
     else:
         raise ValueError(f'Aggregator {agg_arch} not implemented')
     

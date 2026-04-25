@@ -18,6 +18,26 @@ LOGS/
 *.ckpt
 *.pth
 
+# Training / eval output logs and dumps (regenerable, large)
+*.log
+*.csv
+eval_*_interim/
+failed_examples_*/
+trajectory_plots_*/
+per_yaw_records.json
+
+# External repos cloned in-tree (not our code)
+Bag-of-Queries/
+CricaVPR/
+baselines/
+
+# Generated binary docs (regenerable from .md)
+*.docx
+
+# Editor / vault metadata
+.obsidian/
+.claude/
+
 # IDE
 .vscode/
 .idea/
