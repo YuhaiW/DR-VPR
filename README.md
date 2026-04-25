@@ -202,6 +202,7 @@ DR-VPR/
 └── assets/                      # README figures
 ```
 
+<!--
 ## 🎓 Citation
 
 ```bibtex
@@ -212,6 +213,7 @@ DR-VPR/
   year    = {2026}
 }
 ```
+-->
 
 ## 📄 License
 
