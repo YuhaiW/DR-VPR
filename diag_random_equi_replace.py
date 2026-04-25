@@ -92,8 +92,10 @@ def evaluate(top1, q_poses_raw, db_poses):
     theta = np.deg2rad(THETA_DEGREES)
     q = q_poses_raw.copy()
     qx, qy = q[:, 3], q[:, 7]
-    q[:, 3] = qx * np.cos(theta) - qy * np.sin(theta)
-    q[:, 7] = qx * np.sin(theta) + qy * np.cos(theta)
+    # BUGFIX: temp vars
+    qx_rot = qx * np.cos(theta) - qy * np.sin(theta)
+    qy_rot = qx * np.sin(theta) + qy * np.cos(theta)
+    q[:, 3], q[:, 7] = qx_rot, qy_rot
     db_x, db_y = db_poses[:, 3], db_poses[:, 7]
     correct = total = 0
     for i in range(len(q)):

@@ -1,0 +1,7370 @@
+[
+  {
+    "inplane_abs": 0.0,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.3138315808938326,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.571397035497151,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.337289097877813,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.14895523618204057,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.27973230699510937,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.241712106443406,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.512109359772214,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.7757140503238653,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.462566217752185,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.279608116845369,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.4852295390724066,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.304792998736352,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.8289876216293945,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.6127643414668278,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.311519974716921,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.728163130863514,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.6349803616304825,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.630669529487454,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.8997317587755895,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.2979541981814116,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.816387553481737,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.359145810620593,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.473361648268178,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.862421596177132,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.979135668930525,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.343851571578487,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.65154340205811,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.565717970582895,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.126025979811692,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.664377531081299,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.15849114598924,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.527579575303653,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.583291788149259,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 13.817040940248091,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 23.756057897556587,
+    "bucket": "[20\u00b0, 25\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.499821870409862,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.895931618755005,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.086647979784733,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.882752812247456,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.415481808239685,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.205795288203488,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 12.00901086466326,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.447193561881937,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.648957907289631,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.472521488624397,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.61939565850951,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.873762324567898,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.351047128834916,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 11.708531540993114,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.974646803615731,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.026452415435446,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.097601171518234,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.790516707187177,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.396932882468753,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.9412449478908502,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.2613743502160961,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.7777539315874081,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.3129630325365873,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.08855123673681,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.6709366345335636,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.6648448348698663,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.033673718271038135,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.6036945642298341,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.11306046993410632,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.577553938187611,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.2128797547789982,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.5597776443220424,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.002020766066274255,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.117900666475932,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.737296504237188,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.4779680606229453,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5039662530708758,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.185014713978704,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.6669536022173124,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.3662898846793512,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.9771013890779336,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.0267641492717265,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.292050822757697,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.313354069218821,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.80979359369265,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.894693921749974,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.658269962653594,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.8698950548549097,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.009307590893800833,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.134900526099386,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.782946694734062,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.984339200915535,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.7250147941252005,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.1843538216717178,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.372884503587056,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.679828703902359,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.223519250522665,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.562326074262055,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.945023376796284,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.753147919925551,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.513189039179062,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.718690715395131,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.880195281482942,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.435535921784785,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 11.016083553802897,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.030799741829252,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.987132017395577,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.737179008766086,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.31622693416263,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.876480528621011,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.338745109965924,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.169268791095611,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.537857523438595,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.835872233173417,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.943133784866644,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 18.398430125411135,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.326408355425638,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.958895148459225,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.851548813587532,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.478996168654942,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.308673532593651,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.9482054640498374,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.440315267500644,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3866378728726025,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.3001516542280354,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.071343168096001,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.0157807996042805,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.841047098921746,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5331589028675956,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.202914219841826,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.2199413983824072,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3401085603651912,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.2168724451050115,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.22207739383533026,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3494024715466981,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.4993429653599635,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.238495894846265,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.9085879667134713,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.133266768554691,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.07118944171219,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.042359130813054,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.298675096222083,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.263522493154355,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.594995424695393,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 17.73459607800441,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 19.508300210782057,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 15.75504061716419,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 13.648981721086523,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 15.45393437757644,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.685073724397268,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.579063722217878,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 14.545239758097583,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.7427491649200855,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.117751703440444,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.200410652624338,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.270542850329482,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 11.213529640953308,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.084435140706528,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.968598382257413,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.372529851704575,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.315528348188575,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.436511621604059,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.628268692063022,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.8513152262969355,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.420623264734287,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.845152670189748,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.2739868840397883,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.088818261592328,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.444151814919675,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.3491699456611785,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.465150879607336,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.382495235922415,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.44110406748169,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.451425626107564,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.8575791034648312,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.24645804215082173,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.662286224802871,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.868784856608587,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.35911219960087454,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.836585264079284,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.5709689212063513,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.9937112313403059,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.10283108184119082,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.6239959784071734,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.08198346510802046,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.8898117442636287,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.034657329630286546,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3749993417447748,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.8456632321172437,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.616523608604974,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.154283855806743,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.825398996973657,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.332360381295842,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.770657782941537,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.8314646585843395,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.3708012370689024,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.403227942803054,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.12177813403597053,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.7395609095140195,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.22122820320052888,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5441173320109888,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.2808477168893235,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.351593666919464,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.6657289283134238,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.4118590574728853,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.43473699342414,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.670529567588761,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.3274430078869015,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.993866525311396,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.641313224192203,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.814152320524752,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.4674912842324686,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.73208284291275,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.85262580871947,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.475386053287769,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.536227647748468,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 11.97341733712334,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 15.116975615854821,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.990232482256896,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.43423525500952,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.565183428598012,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.690991948276322,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.237583954593185,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.286864060224028,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.3510555858268765,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.19988350538118,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.750486765631735,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.946133643887338,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.9963063632451149,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.538948971222471,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.1947214934291892,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.476381958472077,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5389732957025604,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.3941353498422626,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.861022265040927,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.345006324314849,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.27223848752839014,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.988419769615053,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.583789144484182,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.608687566670111,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.930551422682841,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.695062318805916,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.371055692527422,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.91149513330551,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.082462902490349,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.042582005571784,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.607371512218901,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.298431325873855,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.739504408847652,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.365284149443547,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.860906719590166,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.9112435207491485,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.867068766602171,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.645664354155067,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.668639655583143,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.6886772576873115,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.993189546144471,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.80344479148306,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.8356569097144524,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.8044697869373961,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.642172079107233,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3820108555599893,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.9614410443860812,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.414219646904868,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.301120966917486,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.67292461454146,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.791435147172304,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.158843789761345,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.844785904732083,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.939588421120675,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.944179709878695,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.042537951813626,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.871294456341289,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.358105006725086,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.571737651298688,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.705342130338904,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.891102475914258,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.610105051025421,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5192812042961712,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.6695676464049358,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.8341391420613589,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.5496408251944072,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.6445428136615594,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.207384363072661,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.091019742053621,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.536531454073037,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.5758329409675755,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.446636693964114,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 20.693014349083985,
+    "bucket": "[20\u00b0, 25\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 14.31238760892319,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.640871167101623,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3661019565151689,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.1109488230486946,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.2703918764929805,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.401016203461108,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.466281543714081,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.932437097511342,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.149810485407984,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.64914913392558,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.642173915114875,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.041233971498167,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.012414868515801,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.410003214525927,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.582487957562904,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.9406694836803267,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.93189260336183,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.842019800056038,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.111624337346479,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.027921201306501,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.795571644266651,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.282573695796942,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 1,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.0,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.3138315808938326,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.571397035497151,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.337289097877813,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.14895523618204057,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.27973230699510937,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.241712106443406,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.512109359772214,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.7757140503238653,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.462566217752185,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.279608116845369,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.4852295390724066,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.304792998736352,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.8289876216293945,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.6127643414668278,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.311519974716921,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.728163130863514,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.6349803616304825,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.630669529487454,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.8997317587755895,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.2979541981814116,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.816387553481737,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.359145810620593,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.473361648268178,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.862421596177132,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.979135668930525,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.343851571578487,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.65154340205811,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.565717970582895,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.126025979811692,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.664377531081299,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.15849114598924,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.527579575303653,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.583291788149259,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 13.817040940248091,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 23.756057897556587,
+    "bucket": "[20\u00b0, 25\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.499821870409862,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.895931618755005,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.086647979784733,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.882752812247456,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.415481808239685,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.205795288203488,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 12.00901086466326,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.447193561881937,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.648957907289631,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.472521488624397,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.61939565850951,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.873762324567898,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.351047128834916,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 11.708531540993114,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.974646803615731,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.026452415435446,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.097601171518234,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.790516707187177,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.396932882468753,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.9412449478908502,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.2613743502160961,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.7777539315874081,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.3129630325365873,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.08855123673681,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.6709366345335636,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.6648448348698663,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.033673718271038135,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.6036945642298341,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.11306046993410632,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.577553938187611,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.2128797547789982,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.5597776443220424,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.002020766066274255,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.117900666475932,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.737296504237188,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.4779680606229453,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5039662530708758,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.185014713978704,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.6669536022173124,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.3662898846793512,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.9771013890779336,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.0267641492717265,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.292050822757697,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.313354069218821,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.80979359369265,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.894693921749974,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.658269962653594,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.8698950548549097,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.009307590893800833,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.134900526099386,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.782946694734062,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.984339200915535,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.7250147941252005,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.1843538216717178,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.372884503587056,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.679828703902359,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.223519250522665,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.562326074262055,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.945023376796284,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.753147919925551,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.513189039179062,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.718690715395131,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.880195281482942,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.435535921784785,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 11.016083553802897,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.030799741829252,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.987132017395577,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.737179008766086,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.31622693416263,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.876480528621011,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.338745109965924,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.169268791095611,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.537857523438595,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.835872233173417,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.943133784866644,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 18.398430125411135,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.326408355425638,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.958895148459225,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.851548813587532,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.478996168654942,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.308673532593651,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.9482054640498374,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.440315267500644,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3866378728726025,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.3001516542280354,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.071343168096001,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.0157807996042805,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.841047098921746,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5331589028675956,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.202914219841826,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.2199413983824072,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3401085603651912,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.2168724451050115,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.22207739383533026,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3494024715466981,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.4993429653599635,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.238495894846265,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.9085879667134713,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.133266768554691,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.07118944171219,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.042359130813054,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.298675096222083,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.263522493154355,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.594995424695393,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 17.73459607800441,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 19.508300210782057,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 15.75504061716419,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 13.648981721086523,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 15.45393437757644,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.685073724397268,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.579063722217878,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 14.545239758097583,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.7427491649200855,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.117751703440444,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.200410652624338,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.270542850329482,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 11.213529640953308,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.084435140706528,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.968598382257413,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.372529851704575,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.315528348188575,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.436511621604059,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.628268692063022,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.8513152262969355,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.420623264734287,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.845152670189748,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.2739868840397883,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.088818261592328,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.444151814919675,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.3491699456611785,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.465150879607336,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.382495235922415,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.44110406748169,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.451425626107564,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.8575791034648312,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.24645804215082173,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.662286224802871,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.868784856608587,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.35911219960087454,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.836585264079284,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.5709689212063513,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.9937112313403059,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.10283108184119082,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.6239959784071734,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.08198346510802046,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.8898117442636287,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.034657329630286546,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3749993417447748,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.8456632321172437,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.616523608604974,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.154283855806743,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.825398996973657,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.332360381295842,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.770657782941537,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.8314646585843395,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.3708012370689024,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.403227942803054,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.12177813403597053,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.7395609095140195,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.22122820320052888,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5441173320109888,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.2808477168893235,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.351593666919464,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.6657289283134238,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.4118590574728853,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.43473699342414,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.670529567588761,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.3274430078869015,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.993866525311396,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.641313224192203,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.814152320524752,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.4674912842324686,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.73208284291275,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.85262580871947,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.475386053287769,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.536227647748468,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 11.97341733712334,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 15.116975615854821,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.990232482256896,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.43423525500952,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.565183428598012,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.690991948276322,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.237583954593185,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.286864060224028,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.3510555858268765,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.19988350538118,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.750486765631735,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.946133643887338,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.9963063632451149,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.538948971222471,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.1947214934291892,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.476381958472077,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5389732957025604,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.3941353498422626,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.861022265040927,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.345006324314849,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.27223848752839014,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.988419769615053,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.583789144484182,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.608687566670111,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.930551422682841,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.695062318805916,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.371055692527422,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.91149513330551,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.082462902490349,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.042582005571784,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.607371512218901,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.298431325873855,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.739504408847652,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.365284149443547,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.860906719590166,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.9112435207491485,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.867068766602171,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.645664354155067,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.668639655583143,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.6886772576873115,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.993189546144471,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.80344479148306,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.8356569097144524,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.8044697869373961,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.642172079107233,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3820108555599893,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.9614410443860812,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.414219646904868,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.301120966917486,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.67292461454146,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.791435147172304,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.158843789761345,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.844785904732083,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.939588421120675,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.944179709878695,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.042537951813626,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.871294456341289,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.358105006725086,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.571737651298688,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.705342130338904,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.891102475914258,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.610105051025421,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5192812042961712,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.6695676464049358,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.8341391420613589,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.5496408251944072,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.6445428136615594,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.207384363072661,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.091019742053621,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.536531454073037,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.5758329409675755,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.446636693964114,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 20.693014349083985,
+    "bucket": "[20\u00b0, 25\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 14.31238760892319,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.640871167101623,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3661019565151689,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.1109488230486946,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.2703918764929805,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.401016203461108,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.466281543714081,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.932437097511342,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.149810485407984,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.64914913392558,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.642173915114875,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.041233971498167,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.012414868515801,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.410003214525927,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.582487957562904,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.9406694836803267,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.93189260336183,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.842019800056038,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.111624337346479,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.027921201306501,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.795571644266651,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.282573695796942,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 42,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.0,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.3138315808938326,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.571397035497151,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.337289097877813,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.14895523618204057,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.27973230699510937,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.241712106443406,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.512109359772214,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.7757140503238653,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.462566217752185,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.279608116845369,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.4852295390724066,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.304792998736352,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.8289876216293945,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.6127643414668278,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.311519974716921,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.728163130863514,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.6349803616304825,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.630669529487454,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.8997317587755895,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.2979541981814116,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.816387553481737,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.359145810620593,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.473361648268178,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.862421596177132,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.979135668930525,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.343851571578487,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.65154340205811,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.565717970582895,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.126025979811692,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.664377531081299,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.15849114598924,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.527579575303653,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.583291788149259,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 13.817040940248091,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 23.756057897556587,
+    "bucket": "[20\u00b0, 25\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.499821870409862,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.895931618755005,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.086647979784733,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.882752812247456,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.415481808239685,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.205795288203488,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 12.00901086466326,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.447193561881937,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.648957907289631,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.472521488624397,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.61939565850951,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.873762324567898,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.351047128834916,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 11.708531540993114,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.974646803615731,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.026452415435446,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.097601171518234,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.790516707187177,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.396932882468753,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.9412449478908502,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.2613743502160961,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.7777539315874081,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.3129630325365873,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.08855123673681,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.6709366345335636,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.6648448348698663,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.033673718271038135,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.6036945642298341,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.11306046993410632,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.577553938187611,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.2128797547789982,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.5597776443220424,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.002020766066274255,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.117900666475932,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.737296504237188,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.4779680606229453,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5039662530708758,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.185014713978704,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.6669536022173124,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.3662898846793512,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.9771013890779336,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.0267641492717265,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.292050822757697,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.313354069218821,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.80979359369265,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.894693921749974,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.658269962653594,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.8698950548549097,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.009307590893800833,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.134900526099386,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.782946694734062,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.984339200915535,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.7250147941252005,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.1843538216717178,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.372884503587056,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.679828703902359,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.223519250522665,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.562326074262055,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.945023376796284,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.753147919925551,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.513189039179062,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.718690715395131,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.880195281482942,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.435535921784785,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 11.016083553802897,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.030799741829252,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.987132017395577,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.737179008766086,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.31622693416263,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.876480528621011,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.338745109965924,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.169268791095611,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.537857523438595,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.835872233173417,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.943133784866644,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 18.398430125411135,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.326408355425638,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.958895148459225,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.851548813587532,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.478996168654942,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.308673532593651,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.9482054640498374,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.440315267500644,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3866378728726025,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.3001516542280354,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.071343168096001,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.0157807996042805,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.841047098921746,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5331589028675956,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.202914219841826,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.2199413983824072,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3401085603651912,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.2168724451050115,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.22207739383533026,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3494024715466981,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.4993429653599635,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.238495894846265,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.9085879667134713,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.133266768554691,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.07118944171219,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.042359130813054,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.298675096222083,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.263522493154355,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.594995424695393,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 17.73459607800441,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 19.508300210782057,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 15.75504061716419,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 13.648981721086523,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 15.45393437757644,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.685073724397268,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.579063722217878,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 14.545239758097583,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.7427491649200855,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.117751703440444,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.200410652624338,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.270542850329482,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 11.213529640953308,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.084435140706528,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.968598382257413,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.372529851704575,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.315528348188575,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.436511621604059,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.628268692063022,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.8513152262969355,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.420623264734287,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.845152670189748,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.2739868840397883,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.088818261592328,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.444151814919675,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.3491699456611785,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.465150879607336,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.382495235922415,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.44110406748169,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.451425626107564,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.8575791034648312,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.24645804215082173,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.662286224802871,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.868784856608587,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.35911219960087454,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.836585264079284,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.5709689212063513,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.9937112313403059,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.10283108184119082,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.6239959784071734,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.08198346510802046,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.8898117442636287,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.034657329630286546,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3749993417447748,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.8456632321172437,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.616523608604974,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.154283855806743,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.825398996973657,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.332360381295842,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.770657782941537,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.8314646585843395,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.3708012370689024,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.403227942803054,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.12177813403597053,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.7395609095140195,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.22122820320052888,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5441173320109888,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.2808477168893235,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.351593666919464,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.6657289283134238,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.4118590574728853,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.43473699342414,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.670529567588761,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.3274430078869015,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.993866525311396,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.641313224192203,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.814152320524752,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.4674912842324686,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.73208284291275,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.85262580871947,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.475386053287769,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.536227647748468,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 11.97341733712334,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 15.116975615854821,
+    "bucket": "[15\u00b0, 20\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.990232482256896,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.43423525500952,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.565183428598012,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.690991948276322,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.237583954593185,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.286864060224028,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.3510555858268765,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.19988350538118,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.750486765631735,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.946133643887338,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.9963063632451149,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.538948971222471,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.1947214934291892,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.476381958472077,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5389732957025604,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.3941353498422626,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.861022265040927,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.345006324314849,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.27223848752839014,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.988419769615053,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.583789144484182,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.608687566670111,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.930551422682841,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.695062318805916,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.371055692527422,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.91149513330551,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.082462902490349,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.042582005571784,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.607371512218901,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.298431325873855,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.739504408847652,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.365284149443547,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.860906719590166,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.9112435207491485,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.867068766602171,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.645664354155067,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.668639655583143,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.6886772576873115,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.993189546144471,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.80344479148306,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.8356569097144524,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.8044697869373961,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.642172079107233,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3820108555599893,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.9614410443860812,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.414219646904868,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.301120966917486,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.67292461454146,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 10.791435147172304,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.158843789761345,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 9.844785904732083,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.939588421120675,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.944179709878695,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.042537951813626,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.871294456341289,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.358105006725086,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.571737651298688,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.705342130338904,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.891102475914258,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.610105051025421,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 0.5192812042961712,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.6695676464049358,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.8341391420613589,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.5496408251944072,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.6445428136615594,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.207384363072661,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.091019742053621,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.536531454073037,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.5758329409675755,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.446636693964114,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 20.693014349083985,
+    "bucket": "[20\u00b0, 25\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 14.31238760892319,
+    "bucket": "[10\u00b0, 15\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.640871167101623,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 1.3661019565151689,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.1109488230486946,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.2703918764929805,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.401016203461108,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 6.466281543714081,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.932437097511342,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.149810485407984,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.64914913392558,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.642173915114875,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.041233971498167,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.012414868515801,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.410003214525927,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.582487957562904,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 2.9406694836803267,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.93189260336183,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 5.842019800056038,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 7.111624337346479,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 8.027921201306501,
+    "bucket": "[ 5\u00b0, 10\u00b0)",
+    "boq_correct": 0,
+    "drvpr_correct": 0,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 4.795571644266651,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  },
+  {
+    "inplane_abs": 3.282573695796942,
+    "bucket": "[ 0\u00b0,  5\u00b0)",
+    "boq_correct": 1,
+    "drvpr_correct": 1,
+    "seed": 190223,
+    "dataset": "conslam"
+  }
+]

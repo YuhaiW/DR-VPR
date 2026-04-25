@@ -96,8 +96,10 @@ def main():
     theta_rad = np.deg2rad(THETA_DEGREES)
     q_poses = q_ds.poses.copy()
     qx, qy = q_poses[:, 3], q_poses[:, 7]
-    q_poses[:, 3] = qx * np.cos(theta_rad) - qy * np.sin(theta_rad)
-    q_poses[:, 7] = qx * np.sin(theta_rad) + qy * np.cos(theta_rad)
+    # BUGFIX: temp vars
+    qx_rot = qx * np.cos(theta_rad) - qy * np.sin(theta_rad)
+    qy_rot = qx * np.sin(theta_rad) + qy * np.cos(theta_rad)
+    q_poses[:, 3], q_poses[:, 7] = qx_rot, qy_rot
     db_poses = db_ds.poses
     db_x, db_y = db_poses[:, 3], db_poses[:, 7]
 

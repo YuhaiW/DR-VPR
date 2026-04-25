@@ -163,6 +163,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--seed', type=int, default=190223)
     parser.add_argument('--max_epochs', type=int, default=10)
+    parser.add_argument('--orientation', type=int, default=8,
+                        choices=[4, 8, 16, 32],
+                        help='C_n rotation group order')
     args = parser.parse_args()
 
     pl.utilities.seed.seed_everything(seed=args.seed, workers=True)
@@ -183,7 +186,7 @@ if __name__ == '__main__':
     print(f"{'='*60}\n")
 
     model = EquiStandaloneVPR(
-        orientation=8, layers=(2, 2, 2, 2), channels=(64, 128, 256, 512),
+        orientation=args.orientation, layers=(2, 2, 2, 2), channels=(64, 128, 256, 512),
         out_dim=1024, gem_p_init=3.0,
         lr=1e-3, weight_decay=1e-4, warmup_steps=300,
         milestones=(8, 14), lr_mult=0.3,

@@ -1,7 +1,45 @@
-# Tier-2 实验日志：2026-04-17
+# Tier-2 实验日志：2026-04-17（含 04-18 bug 修正注记）
 
 DR-VPR revision sprint 的单日实验记录。**决策门 + pivot 的完整证据链**。
 写给审稿时可能追问"你怎么得出这个结论"的 reviewer、以及以后复盘方法论的自己。
+
+---
+
+## ⚠️ 2026-04-18 BUG 修正注记（必读，覆盖以下所有"+3.81 / 63.91 / 62.25"数字）
+
+本日志中所有引用 `per_yaw_analysis.py` 或 `eval_rerank_standalone.py` 的数字
+（包括 04-17 晚的 P1 standalone β=0.1=63.91 和 per-yaw [20°, 40°)=+3.81）
+**因 query-pose 旋转 in-place numpy view bug 而虚高**。
+
+详见 `doc/PER_YAW_ANALYSIS.md` v2 (2026-04-18) 的 bug 章节和
+`/home/yuhai/.claude/projects/-home-yuhai-project-DR-VPR/memory/feedback_numpy_view_inplace.md`。
+
+修正后真实数字：
+
+| Result | 原报告 (buggy) | 修正后 (2026-04-18) |
+|--------|---|---|
+| P1 standalone seed=1 Ep7, β=0.1, ConSLAM R@1 | 63.91 | **62.21** |
+| P1 standalone seed=1 Ep7, β=0.0 (BoQ-only sanity) | 62.25 | **61.24** |
+| Per-yaw [0°, 20°) bucket Δ | +0.57 | **+0.97** |
+| Per-yaw **[20°, 40°)** bucket Δ | **+3.81** ❌ | **+0.00** ✓ |
+| Per-yaw [40°, 60°) bucket Δ | −2.08 | **−1.96** |
+| Total per-yaw Δ | +0.77 | **+0.65** |
+
+**`eval_rerank.py` 报的 freeze_boq 60.80 / 61.45 ± 0.18 不受影响**——
+那个文件用的是 `qx_rot, qy_rot` 临时变量写法，从一开始就对。
+
+**对 paper 影响**：
+- "+3.81 在 [20°, 40°) bucket 验证 rotation robustness" 这个 sub-result **不存在**
+- DR-VPR 的真实 +0.65 R@1 增益**集中在 easy bucket**（low-rotation），
+  不是预期的中等旋转区
+- "rotation robustness" 主叙事**需要重新组织**——可改成 ensemble effect
+  of two-ResNet50 descriptors，不强行讲旋转故事
+- 主表绝对数字 (61.45 ± 0.18 freeze_boq + β=0.5) 仍 valid
+
+**等 P1 3-seed 跑完（明早 04-18）需重新校准**：bug 修复后，P1 是否仍有
+在 freeze_boq 之上的可衡量改进，待 3 seed mean ± std 出来才知道。
+
+---
 
 ---
 
@@ -169,5 +207,113 @@ BoQ 的 cross-domain 退化**。只有两阶段 rerank 的 β=0 行（只用 des
 
 ---
 
+## 第三次实验 (晚): Path P1 Multi-Scale Standalone (BREAKTHROUGH)
+
+### 动机
+
+前两次（B2 NormPool + adaptive β）证明在现有 fusion 架构下 rerank 上限 ≈ 61.45。
+Path A.1（自适应 β）实测和方式 B/C 都失败后，唯一未试过的方向是
+**架构级改动 + 完全 standalone 训练**。
+
+诊断流：
+- Stringent test：用真随机单位向量替换 desc_equi → +0.77 → -4.63。证实 desc_equi
+  的 +0.77 是真实结构信号，不是 ensemble 噪声（差距 +5.4 R@1 远超噪声）。
+- 既然 equi 真有用，**给它独立训练 + 多尺度容量** 是合理 next step。
+
+### 配置
+
+```
+架构: E2ResNetMultiScale (models/equi_multiscale.py)
+  - E2ResNet C8 backbone (复用 EquivariantBasicBlock)
+  - layer3 输出 → GroupPool(max) → GeM_l3 (learnable p=3 init)
+  - layer4 输出 → GroupPool(max) → GeM_l4 (learnable p=3 init)
+  - concat (32 + 64 = 96 dim) → Linear(96 → 1024) → L2-norm
+  - **完全独立 — 没有 BoQ branch，没有 fusion，没有 gate**
+  - 1.34M trainable params (vs dual-branch 25M)
+
+训练: train_equi_standalone.py
+  - 单 loss: MultiSimilarityLoss(desc_equi, labels)
+  - AdamW, lr=1e-3, wd=1e-4, warmup 300, milestones=(8,14)
+  - GSV-Cities batch=32×4, image=320×320, fp16
+  - val on ConPR + ConSLAM (single-stage retrieve on desc_equi)
+  - ckpt monitor='conslam/R1'
+
+eval: eval_rerank_standalone.py
+  - Stage 1: 官方 BoQ(ResNet50)@320 from torch.hub, FAISS top-100
+  - Stage 2: 0.5·boq + β·equi rerank with desc_equi from standalone ckpt
+  - β sweep [0.0, 0.1, ..., 1.0]
+```
+
+### Mid-Training 决策门 (Epoch 7 ckpt, single seed)
+
+```
+ConSLAM β sweep:
+
+  β=0.0  R@1=62.25%   (此 run 内 BoQ-only 基线)
+  β=0.1  R@1=63.91%   🏆 NEW HIGH, +1.66 over β=0
+  β=0.2  R@1=62.25%
+  β=0.3  R@1=62.25%
+  β=0.5  R@1=58.28%   (β=0.5 不再是 sweet spot)
+  β=1.0  R@1=43.71%   (纯 equi)
+```
+
+**vs 之前最佳**: freeze_boq + max + β=0.5 = 61.45 ± 0.18 (3 seed)
+**P1 Standalone Ep7 + β=0.1 = 63.91 (single seed)** → **+2.46 over previous best**
+
+### 训练轨迹（val R@1，metric 用全部 396 query 作分母）
+
+| Epoch | ConPR R@1 | ConSLAM R@1 (ckpt selection) | b_acc |
+|-------|-----------|------------------------------|-------|
+| 0 | 51.93 | 29.80 | 0.27 |
+| 1 | 55.81 | 29.04 | 0.36 |
+| 2 | 58.14 | 27.53 | 0.41 |
+| 3 | 58.62 | 30.30 | 0.45 |
+| 4 | 54.55 | 26.77 | 0.46 |
+| 5 | 59.66 | 32.32 | 0.47 |
+| 6 | 60.10 | 32.32 | 0.48 |
+| 7 | 55.59 | **33.59** ← best so far | 0.49 |
+| 8-9 | (训练中) | (训练中) |  |
+
+ConSLAM val 单调上升（29.80 → 33.59 over 7 epoch, +3.8 R@1），desc_equi 真在
+学 metric learning。绝对值 33.59 << BoQ standalone 60.91，但**rerank 看的不是
+绝对 standalone 强度，而是和 BoQ 的 orthogonality**——这次 trained 的
+desc_equi 显然更 orthogonal 于 BoQ 比 untrained 的版本。
+
+### 关键洞察 (反驳之前理论)
+
+**之前的 hypothesis** (Tier-2 + L_equi 失败 → "L_equi 让 desc_equi 收敛到 BoQ
+subspace")  **被这个结果驳回**。同样是用 MS loss 训 desc_equi，P1 standalone
+work 了 (+1.66) 而 Tier-2+L_equi 没 (-1.0)。
+
+可能原因：
+1. **Multi-scale > single-scale**: layer3 + layer4 双尺度的 invariant 特征捕获
+   不同的几何信号，比单 layer4 更 orthogonal 于 BoQ。
+2. **Standalone > fusion-tied**: 没有 gate 的奇怪 gradient flow，desc_equi 优化
+   信号干净。
+3. **从 random init 直接训**比"被 fusion gradient 间接训" sample-efficiency 高。
+
+也可能只是 **multi-scale 这个架构改动本身**就是关键。下一步 ablation 应分离这两
+个变量（standalone single-scale vs standalone multi-scale）。
+
+### Caveat
+
+- **β=0 在此 run 给 62.25** 而非 eval_baselines.py 实测的 60.91，差 1.34 点。
+  可能是 BN running stats / valid_query 过滤微差异。**需要 stress test 校准
+  绝对数字**。但**relative +1.66 (β=0 → β=0.1, 同 pipeline 内) 可信**。
+- **single seed**, 需扩 3 seed 验证稳定性。
+- ckpt 选择 metric (ConSLAM val R@1 单阶段) 可能不是 best β rerank R@1 的最优
+  predictor。Ep9/10 完成后应 eval 全部 ckpt 找真正的 best epoch。
+
+### 后续
+
+1. 等 Epoch 8/9 训完（~10 min），eval 全部 10 个 ckpt 找最佳 epoch
+2. 扩 seed=42 + seed=190223 overnight（~5h）
+3. 如果 3 seed mean 仍 ≥ 62.5，**P1 standalone 升为 paper 主方法**，
+   freeze_boq 降为 ablation row
+4. (可选) ablation: standalone single-scale (layer4 only) vs P1 multi-scale
+   分离 "multi-scale" vs "standalone" 的贡献
+
+---
+
 *记录人：DR-VPR revision team*
-*时间：2026-04-17 实验 session*
+*时间：2026-04-17 实验 session (含 P1 BREAKTHROUGH 至 21:00)*

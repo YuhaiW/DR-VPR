@@ -150,8 +150,11 @@ def compute_recall_from_reranked(reranked, q_poses_raw, db_poses,
     q = q_poses_raw.copy()
     q[:, 3] += offset[0]; q[:, 7] += offset[1]
     qx, qy = q[:, 3], q[:, 7]
-    q[:, 3] = qx * np.cos(theta) - qy * np.sin(theta)
-    q[:, 7] = qx * np.sin(theta) + qy * np.cos(theta)
+    # BUGFIX: temp vars to avoid in-place numpy view corruption (qx becomes rotated
+    # before y rotation reads it if we assign in-place)
+    qx_rot = qx * np.cos(theta) - qy * np.sin(theta)
+    qy_rot = qx * np.sin(theta) + qy * np.cos(theta)
+    q[:, 3], q[:, 7] = qx_rot, qy_rot
     db_x, db_y = db_poses[:, 3], db_poses[:, 7]
     tp1 = tp5 = tp10 = total = 0
     for q_idx in range(len(q)):

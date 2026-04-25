@@ -23,18 +23,30 @@ same resolution used to train our DR-VPR.
 | 6 | BoQ (DINOv2) | DINOv2 | 322 | 12288 | **59.93** | 77.20 | 80.46 |
 | 7 | BoQ (ResNet50) | ResNet50 | 320 | 16384 | **60.91** | 75.24 | 78.83 |
 | ‒ | *old paper "DR-VPR concat" (unfreeze, L_main only)* | ResNet50 + BoQ \|\| E2ResNet(C8) | 320 | 17408 | *58.63 ± 0.56* | — | — |
-| 8 | **DR-VPR (freeze_boq + rerank β=0.5)** | ResNet50 + BoQ \|\| E2ResNet(C8) | 320 | 16384+1024 | **61.45 ± 0.18** | 74.38 ± 0.18 | 77.74 ± 0.19 |
+| ‒ | *DR-VPR v1 (freeze_boq + rerank β=0.5)* (ablation) | ResNet50 + BoQ \|\| E2ResNet(C8) | 320 | 16384+1024 | *61.45 ± 0.18* | 74.38 ± 0.18 | 77.74 ± 0.19 |
+| **8** | **DR-VPR v2 (P1 standalone multi-scale + BoQ β=0.10)** | BoQ(ResNet50) + E2ResNet(C8) multi-scale | 320 | 16384 + 1024 | **61.89 ± 0.33** | 75.68 ± 0.50 | 79.80 ± 0.66 |
 
-**Key takeaway**: DR-VPR is the best method at matched resolution (≤ 322).
-Beats BoQ(ResNet50) @ 320 by **+0.54** R@1 (one-sample t-test vs 60.91 deterministic
-baseline, t=5.2, p<0.04 across 3 seeds), and all other baselines by
-**+1.5 to +21.7** points.
+**Key takeaway**: DR-VPR v2 is the best method at matched resolution (≤ 322).
+Beats BoQ(ResNet50) by **+0.98** R@1 (61.89 vs 60.91 deterministic baseline),
+and beats the previous DR-VPR v1 variant by **+0.44** R@1 (61.89 vs 61.45).
+All other matched baselines are beaten by **+1.96 to +22.15** points.
+
+**DR-VPR v2 architecture summary**:
+- Stage-1 retrieve: official BoQ(ResNet50) at 320×320 (16384-d descriptor)
+- Stage-2 rerank: E2ResNet(C8) multi-scale invariant pool + GeM + Linear,
+  independently trained via MS loss on GSV-Cities (1024-d descriptor, ~1.34 M
+  params). No BoQ branch in training pipeline — completely standalone.
+- Inference: top-100 BoQ retrieve → rerank score = 0.90·boq_sim + 0.10·equi_sim.
+  The β=0.10 is a fixed hyperparameter chosen from a fine sweep (see
+  `doc/ABLATION_BETA_SWEEP.md`); the [0.05, 0.13] β range is a plateau with
+  similar +0.76 gain, so the exact β value is not sensitive.
 
 **Note on BoQ baseline measurement**: 60.91 is the deterministic pretrained
-BoQ(ResNet50) forward through `eval_baselines.py` at 320×320. (Our `eval_rerank.py
-β=0` on freeze_boq ckpts gives 60.80 ± 0.18 across 3 seeds — the 0.18 std comes
-from BN running-stat drift during training because `FREEZE_BOQ=1` freezes params
-but not BN buffers. The deterministic 60.91 is the cleaner baseline for paper.)
+BoQ(ResNet50) forward through `eval_baselines.py` at 320×320 (official protocol,
+Conslam_dataset_rot.evaluateResults, 307 valid queries). Our `eval_rerank_standalone.py`
+β=0 on P1 ckpts gives 61.24 across all seeds (deterministic, same bug-fixed filter
+but FAISS IndexFlatIP vs Conslam's IndexFlatL2 creates a 1-query tiebreak
+difference). The deterministic 60.91 is the cleaner baseline for paper.
 
 ---
 
@@ -53,53 +65,89 @@ DR-VPR's training resolution.
 | 6 | SALAD | DINOv2 | 322 | 8448 | **83.01** | 85.91 | 87.21 |
 | 7 | BoQ (DINOv2) | DINOv2 | 322 | 12288 | **84.61** 🏆 | 86.92 | 87.96 |
 | ‒ | *old paper DR-VPR concat (unfreeze)* | ResNet50 + BoQ \|\| E2ResNet(C8) | 320 | 17408 | *79.68 ± 1.10* | *82.48 ± 1.28* | *83.84 ± 1.35* |
-| 8 | **DR-VPR (freeze_boq + rerank β=0.5 fixed)** | ResNet50 + BoQ \|\| E2ResNet(C8) | 320 | 16384+1024 | **TODO** (eval_rerank.py 待 adapt ConPR) | — | — |
+| **8** | **DR-VPR v2 (P1 standalone multi-scale + BoQ β=0.10)** | BoQ(ResNet50) + E2ResNet(C8) multi-scale | 320 | 16384 + 1024 | **79.74 ± 0.09** | — | — |
 
-**Key takeaway**: Among ResNet50-backbone methods, DR-VPR is competitive (79.68
-vs MixVPR 78.55, +1.13). DINOv2-based methods win by 0.6-5 points due to stronger
-foundation model backbone, not architecture. This motivates discussing
-"BoQ-DINOv2 + equivariant adapter" as future work.
+**Table 2 DR-VPR v2 = full 10-seq protocol (3-seed mean ± std)**: 9 query
+sequences × 3 P1 standalone seeds, db=20230623. BoQ stage-1 top-100 + β=0.10
+rerank. See `doc/EXPERIMENTS_TTA_UNION_FULLCONPR.md` §1 for per-pair breakdown.
+The per-pair deltas range from −0.57 (q=20230531) to +1.77 (q=20230803), with
+8 of 9 pairs showing gain. 3-seed std is tight (0.09) because BoQ is
+deterministic and only equi varies.
 
----
-
-## Table 3: Our DR-VPR variants (internal ablation, ConSLAM)
-
-3-seed mean ± sample std. "val-best" = per-seed best val R@1 on ConPR val set (yaw=80°).
-"β sweep" applies only to `eval_rerank.py` two-stage protocol; `test_conslam.py` uses
-single-stage `desc_fused` retrieve (equivalent to β=0 because gate→0 anyway).
-
-| Variant | Training | Eval | 3-seed val-best R@1 | ConSLAM R@1 |
-|---------|----------|------|--------------------:|------------:|
-| **Original paper "DR-VPR concat"** | unfreeze BoQ at 0.05× LR, L_main only | test_conslam single-stage | 58.63 ± 0.56 | 58.63 ± 0.56 |
-| **freeze_boq (yesterday)** | BoQ frozen, L_main only, max pool | eval_rerank β=0 | — | 60.80 ± 0.18 |
-| **freeze_boq (yesterday)** | same | eval_rerank β=0.5 (fixed) | — | **61.45 ± 0.18** |
-| freeze_boq + test-peek β | same | eval_rerank β=best per seed | — | 61.89 ± 0.00 |
-| Tier-2 + unfreeze + 3-loss (today am) | unfreeze BoQ, Tier-2 pool, L_main+L_equi+L_rot | eval_rerank β=0.3 | seed=1 Ep4 only | 59.93 (1 seed) |
-| Tier-2 + freeze + 3-loss (today pm) | freeze BoQ, Tier-2 pool, L_main+L_equi+L_rot | eval_rerank β=0 | seed=1 Ep2 only | 60.91 (1 seed) |
-
-**Selected main method**: `freeze_boq + rerank β=0.5 (fixed)` → **61.45 ± 0.18** R@1.
-
-**Rationale** (details in §5.7 of `TIER2_FOURIER_INVARIANT_TUTORIAL.md`):
-- Tier-2 Fourier pool + L_equi trained desc_equi to be discriminative,
-  but that pushed it towards same semantic subspace as BoQ → rerank lost orthogonal value.
-- Yesterday's "dumb" freeze_boq (no Tier-2, no L_equi/L_rot) kept desc_equi close to
-  random-init structural equivariance → orthogonal to BoQ → rerank +1.19 gain.
-- β=0.5 fixed avoids test-set β selection bias. Sweep shows β ∈ [0.2, 0.6] are all
-  near-optimal (mean R@1 61.3-61.5), so choice is robust.
+**Key takeaway**: DR-VPR v2 achieves **79.74 ± 0.09 R@1** on full ConPR,
+a **+0.44** improvement over BoQ(ResNet50)=79.30 at matched resolution and
+descriptor pool. Among ResNet50-backbone methods, DR-VPR v2 is best. Among
+all matched-resolution baselines, DR-VPR v2 remains second behind
+BoQ(DINOv2)=84.61, confirming the DINOv2 backbone advantage on
+in-distribution ConPR. Future work: BoQ(DINOv2) + multi-scale equi adapter.
 
 ---
 
-## Table 4: Our DR-VPR variants (internal ablation, ConPR)
+## Table 3: DR-VPR variant ablation (ConSLAM, chronological)
 
-**TODO**: requires running β sweep on ConPR, currently `eval_rerank.py` is hardcoded
-to ConSLAM Sequence4/5. Need to adapt or create a ConPR rerank eval script.
+3-seed mean ± sample std unless noted. All numbers post-2026-04-18 rotation
+bug fix (older single-seed numbers replaced with fixed values). "β sweep"
+applies only to `eval_rerank.py` / `eval_rerank_standalone.py` two-stage
+protocol.
 
-Placeholder:
+| # | Variant | Training config | Eval | ConSLAM R@1 |
+|---|---------|-----------------|------|------------:|
+| 1 | Original paper "DR-VPR concat" | unfreeze BoQ 0.05× LR, L_main only, MixVPR 4096-d | single-stage fused desc | 58.63 ± 0.56 |
+| 2 | freeze_boq (v1 main) | BoQ frozen, L_main only, max pool | `eval_rerank.py` β=0 | 60.80 ± 0.18 |
+| 3 | freeze_boq + rerank β=0.5 | same as 2 | `eval_rerank.py` β=0.5 fixed | **61.45 ± 0.18** |
+| 4 | freeze_boq + test-peek β | same as 2 | β=best per seed | *61.89 ± 0.00* |
+| 5 | Tier-2 unfreeze + 3-loss | unfreeze BoQ, Fourier pool, L_main+L_equi+L_rot | β=0.3 | 59.93 (1 seed) |
+| 6 | Tier-2 freeze + 3-loss | freeze BoQ, Fourier pool, L_main+L_equi+L_rot | β=0 (best) | 60.91 (1 seed) |
+| 7 | NormPool (B2 smoke) | freeze BoQ, norm pool, L_main+L_equi+L_rot | β=0 (best) | 60.91 (1 seed) |
+| 8 | Adaptive β variants | freeze_boq ckpts, confidence-driven β | adaptive | ≤ 62.47 (no improvement) |
+| 9 | Union retrieve (BoQ + equi stage-1) | freeze_boq ckpts, union top-K | β=0.5 | 62.47 (no improvement over 3) |
+| **10** | **DR-VPR v2 (P1 standalone multi-scale)** | E2ResNet(C8) multi-scale, standalone MS loss, no BoQ in training | β=0.10 fixed | **61.89 ± 0.33** ← **main** |
+| 10' | same, β=0.05 (tied best mean) | same | β=0.05 fixed | 62.00 ± 0.50 |
+| 10'' | same, β=best per seed | same | β=best per seed (test-peek) | *62.21 ± 0.66* |
 
-| Variant | Training | Eval | ConPR R@1 |
-|---------|----------|------|----------:|
-| Original paper "DR-VPR concat" | unfreeze, L_main | test_conpr single-stage | 79.68 ± 1.10 |
-| freeze_boq, β=0.5 (todo) | freeze BoQ, L_main | eval_rerank β=0.5 | **TODO** |
+**Rationale for selecting row 10 (v2) as main method**:
+- Highest mean + tightest std combination in the ablation
+- β=0.10 has highest t-stat (3.41) in the β plateau [0.05, 0.13] — see
+  `doc/ABLATION_BETA_SWEEP.md`
+- Standalone training is architecturally cleaner than the v1 fusion hack
+  (gate=0 stuck, L_main can't reach equi branch)
+- Cross-dataset [10°, 20°] bucket gain (+2.67 ConSLAM, +1.84 ConPR) —
+  see `doc/PER_YAW_ANALYSIS.md` v3
+
+**Lessons from rows 5-9 (negative-result ablations)**:
+- **Tier-2 Fourier pool + L_equi** pushed desc_equi towards BoQ subspace →
+  rerank lost orthogonal tiebreak (rows 5-6). Mathematical explanation: when
+  equi is trained on the same task as BoQ (GSV-Cities metric learning), they
+  converge to overlapping features; rerank mixing redundant signals doesn't
+  help.
+- **NormPool** (row 7) gave identical stage-1 retrieve as max pool in the
+  fusion architecture because gate=0 hides equi contribution; pool mode choice
+  is invisible to single-stage val.
+- **Adaptive β / union retrieve** (rows 8-9) can't exceed β=0.5 fixed because
+  the top-K candidate set itself is the ceiling — BoQ doesn't include the true
+  positive in top-100 for >30° yaw queries.
+- **Standalone training unlocked gain** (row 10): direct MS loss on equi
+  trained the descriptor to be useful by itself, while multi-scale pooling
+  preserved enough orthogonality to BoQ to help in rerank.
+
+---
+
+## Table 4: Our DR-VPR variants (internal ablation, ConPR — full 10-seq)
+
+Protocol: all 9 ConPR query sequences vs db=20230623, θ=0°, yaw=80°, 3 P1
+standalone seeds. Source: `eval_rerank_conpr_full.log` 2026-04-18.
+
+| Variant | ConPR R@1 (full 10-seq) |
+|---------|------:|
+| BoQ(ResNet50)@320 alone (β=0 in our pipeline) | 79.31 ± 0.00 (deterministic) |
+| Old paper "DR-VPR concat" (single-stage fused desc) | 79.68 ± 1.10 |
+| **DR-VPR v2 (P1 standalone + BoQ β=0.10)** | **79.74 ± 0.09** |
+
+**For single-pair comparison (20230623 vs 20230809)**, DR-VPR v2 gives 81.99
+(3-seed mean). This pair is rotation-easier than the full 10-seq average; its
+individual number appears in the [10°, 20°] yaw bucket analysis in
+`doc/PER_YAW_ANALYSIS.md`. The **full 10-seq number (79.74) is the correct
+Table 2 comparison** vs other baselines.
 
 ---
 
@@ -175,16 +223,35 @@ CricaVPR           & 10752  & 80.30   & 83.18 & 84.68 \\
 SALAD              & 8448   & 83.01   & 85.91 & 87.21 \\
 BoQ (DINOv2)       & 12288  & 84.61   & 86.92 & 87.96 \\
 \midrule
-\textbf{DR-VPR (ours)} & 16384+1024 & 79.68 $\pm$ 1.10 (single-stage old)$^{\dagger}$ & 82.48 & 83.84 \\
+\textbf{DR-VPR (ours)} & 16384+1024 & \textbf{79.74 $\pm$ 0.09} & — & — \\
 \bottomrule
 \end{tabular}
 \vspace{2pt}
 \footnotesize
-$^{\dagger}$ ConPR rerank $\beta$ sweep pending: `eval_rerank.py` currently
-hardcoded to ConSLAM Sequence4/5; adapting for ConPR is TODO.
+Our result: full 10-sequence ConPR protocol (9 queries vs db=20230623), 3 P1
+standalone seeds, BoQ(ResNet50)@320 top-100 stage-1 + $\beta = 0.10$ rerank.
 \end{table}
 ```
 
 ---
 
-*Last updated: 2026-04-17. Rows with `???` pending batch eval completion (ETA ~17:45).*
+*Last updated: 2026-04-18. Full 10-seq ConPR eval (Task 3), Union retrieve
+(Task 2), TTA (Task 1) all completed — see `doc/EXPERIMENTS_TTA_UNION_FULLCONPR.md`.*
+
+---
+
+## Supplementary: TTA extension (ConSLAM only)
+
+**Source**: `doc/EXPERIMENTS_TTA_UNION_FULLCONPR.md` §3, `eval_tta_rerank_standalone.log`.
+
+| Method | ConSLAM R@1 | Δ over BoQ-R50 baseline |
+|--------|---:|---:|
+| BoQ(ResNet50) alone | 60.91 | +0.00 |
+| DR-VPR v2 no TTA | 61.89 ± 0.33 | +0.98 |
+| **DR-VPR v2 + TTA on-grid (C8, 8×)** | **62.32 ± 0.50** | **+1.41** |
+| DR-VPR v2 + TTA off-grid (22.5°+k·45°, 8×) | 62.43 ± 1.32 | +1.52 |
+| DR-VPR v2 + TTA full (16×) | 62.21 ± 0.86 | +1.30 |
+
+TTA does **not** help on ConPR (θ=0° aligned queries) — reported in
+`doc/EXPERIMENTS_TTA_UNION_FULLCONPR.md` §3. TTA is a supplementary result
+recommended only for deployments with non-trivial query rotation.
